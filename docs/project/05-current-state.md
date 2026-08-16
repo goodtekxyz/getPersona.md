@@ -5,8 +5,11 @@
 ## Stage
 
 - VibeOps 2.5.2로 부트스트랩됨 (`d2010c9`, 2026-08-16).
-- 애플리케이션 코드·패키지 매니페스트·테스트·배포 설정은 없음.
-- 워크플로는 VibeOps TASK 사이클만 사용한다.
+- TASK-001이 제품 기획을 `docs/project/01`–`08`에 고정하는 중이다. 애플리케이션 코드는 없다.
+
+## Product (planned)
+
+페르소나 등록·관리·성장 + Agent API (`post` / `comment` / `reply` → `text` \| `skip`). 게시는 본체 밖.
 
 ## VibeOps
 
@@ -27,19 +30,24 @@
 
 - `TASK-001` · 페르소나 프로젝트 기획 · branch `task/001-task` · In Progress
 
+## Built
+
+| Area | State |
+|------|-------|
+| Project docs | `docs/project/01`–`08` 기획 초안 (이 TASK) |
+| Application | 없음 |
+| Tests / deploy | 없음 |
+
+## Next step
+
+TASK-001을 ship한 뒤, 스택·SoR·personaAgent 재사용을 잠그는 설계 TASK.
+
 ## Inventory
 
 | Path | Role |
 |------|------|
 | `.vibeops.json` | 프로젝트·브랜치·클라이언트 설정 |
-| `.vibeops.env.example` | 선택 LLM 키 템플릿 (`.vibeops.env`는 gitignore) |
 | `AGENTS.md` | 에이전트용 TASK 워크플로 |
-| `.cursor/rules/` | TASK 원본, git 안전, ship 전 문서 |
-| `.cursor/skills/` | `plan-task`, `implement-task` |
-| `docs/tasks/` | TASK 원본 (`TASK-000` 템플릿, `TASK-001` 진행 중) |
-| `docs/project/` | 프로젝트 메모리 (architecture, current-state, decisions) |
+| `docs/project/` | 기획 원본 |
+| `docs/tasks/` | TASK 원본 |
 | `docs/logs/` | 일자별 작업 로그 |
-
-## Next step
-
-TASK-001에서 페르소나 프로젝트 목적·범위·MVP를 문서에 고정한다.
