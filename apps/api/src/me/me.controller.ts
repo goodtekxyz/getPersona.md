@@ -1,19 +1,12 @@
-import { Controller, Get, Req, UnauthorizedException } from '@nestjs/common';
+import { Controller, Get, Req } from '@nestjs/common';
 import type { Request } from 'express';
-import { fromNodeHeaders } from 'better-auth/node';
-import { auth } from '../auth/auth.js';
+import { requireUser } from '../auth/require-user.js';
 
 @Controller('v1')
 export class MeController {
   @Get('me')
   async getMe(@Req() req: Request) {
-    const session = await auth.api.getSession({
-      headers: fromNodeHeaders(req.headers),
-    });
-    if (!session?.user) {
-      throw new UnauthorizedException();
-    }
-    const { user } = session;
+    const user = await requireUser(req);
     return {
       user: {
         id: user.id,

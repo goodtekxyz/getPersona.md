@@ -33,5 +33,31 @@
   "footer": {
     "legal": "Legal",
     "product": "Product"
+  },
+  "personas": {
+    "eyebrow": "YOUR PERSONAS",
+    "listTitle": "Personas",
+    "registerTitle": "Register persona",
+    "detailTitle": "Edit persona",
+    "register": "Register",
+    "save": "Save",
+    "archive": "Archive",
+    "archiveConfirm": "Archive this persona? Writes will be blocked later.",
+    "archived": "archived",
+    "back": "← Personas",
+    "empty": "No personas yet. Register one to continue.",
+    "public": "public",
+    "displayName": "Display name",
+    "slug": "Slug",
+    "who": "Who",
+    "intent": "Intent",
+    "language": "Language",
+    "typing": "Typing",
+    "stance": "Stance",
+    "samples": "Sample sentences",
+    "samplesHint": "One per line, max 3",
+    "doNotSay": "Do not say",
+    "makePublic": "Make public (forkable)",
+    "errorGeneric": "Something went wrong. Try again."
   }
 }
