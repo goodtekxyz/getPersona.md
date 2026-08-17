@@ -85,3 +85,9 @@
 - **Date:** 2026-08-17
 - **Decision:** 작업은 계정 소속 페르소나만. API 키는 해시 저장. 퍼블릭은 명시한 페르소나·엔드포인트만.
 - **Why:** 기본 비공개. 키 원문 재노출을 막는다.
+
+## D-015 · Better Auth on API (M1)
+
+- **Date:** 2026-08-17
+- **Decision:** Better Auth 1.6 runs in `apps/api` (`/api/auth/*`, pg Pool). Web uses `better-auth/react` against `NEXT_PUBLIC_API_URL`. Local cookies are host-only; production sets `AUTH_COOKIE_DOMAIN=.getpersona.md`. SMTP/OAuth are env stubs; `REQUIRE_EMAIL_VERIFICATION` stays false until SMTP is real. `apps/api` is ESM (`"type": "module"`) so Better Auth loads cleanly.
+- **Why:** Architecture places Auth on the Nest process; shared cookie domain needs the API to mint the session for `/v1/me`.
