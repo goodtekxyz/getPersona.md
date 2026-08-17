@@ -1,1 +1,13 @@
-.vibeops.env
+node_modules
+.turbo
+dist
+.next
+coverage
+.env
+.env.local
+*.log
+.DS_Store
+.infisical
+.turbo
+apps/*/dist
+*.tsbuildinfo
