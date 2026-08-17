@@ -6,7 +6,7 @@
 
 | Surface | Host | Does |
 |---------|------|------|
-| Web | `getpersona.md` | 랜딩, 가입, 로그인, 페르소나 등록·싱크·포크·관리 UI. UX는 **getDesign.md 벤치마크** |
+| Web | `getpersona.md` | 랜딩, 가입, 로그인, 페르소나 등록·싱크·포크·관리 UI. **getDesign.md 벤치 → M0에서 DESIGN/LAYOUT/UX 잠금** |
 | Agent | `agent.getpersona.md` | post / comment / reply 등 **역할 에이전트 모임** |
 | Connect | `api.getpersona.md` | REST `/v1` + MCP. 키 또는 명시적 퍼블릭 |
 
@@ -16,7 +16,7 @@
 
 | Capability | Does | Success looks like |
 |------------|------|--------------------|
-| **계정** | 가입·로그인 (getDesign.md와 동일 패턴: 약관·메일·OAuth) | 계정에 페르소나가 소속된다 |
+| **계정** | 가입·로그인 (UX.md / getDesign.md 벤치 패턴: 약관·메일·OAuth) | 계정에 페르소나가 소속된다 |
 | **등록** | 페르소나 최소 계약 생성 | `persona_id` 이후 호출에 사용 |
 | **싱크** | 특정 사람/채널(블로그·X·Threads 핸들 등)에 맞춰 정체성·말투를 학습·반영 | 계약이 그 소스에 더 가깝다. 어댑터 구현은 후속 |
 | **포크** | 공개 영역을 가져와 새 페르소나/사본 | 공개 범위만 복사 |
@@ -68,7 +68,7 @@
 
 ## MVP (implementation slices still ordered by roadmap)
 
-- 웹: 랜딩·가입·로그인·페르소나 CRUD UI (디자인 getDesign.md 벤치)
+- 웹: 랜딩·가입·로그인·페르소나 CRUD UI (**DESIGN.md / LAYOUT.md / UX.md**)
 - 계약 필드 + 성장 remember/promote
 - Agent: post/comment/reply → text \| skip (personaAgent 흡수)
 - API `/v1` + MCP + 키(해시) + 명시적 퍼블릭

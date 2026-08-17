@@ -1,30 +1,30 @@
 # Roadmap
 
-> 번호는 구현 순서가 아니다. 실제 TASK id는 `vibeops task add`가 붙인다.
+> 실제 TASK id는 `vibeops task add`가 붙인다. 상세 마일스톤은 [10-dev-plan.md](10-dev-plan.md).
 
 ## Done / in flight
 
 | Slice | Status |
 |-------|--------|
-| 기획 · 제품·성장·Agent API | TASK-001 Shipped |
-| 설계 · 스택·호스트·제품 표면 | TASK-002 In Progress |
+| 기획 · 제품·성장·Agent API | TASK-001 **Shipped** |
+| 설계 · 스택·호스트·제품 표면 | TASK-002 **Shipped** |
+| 개발계획 · M0–M8 마일스톤 | TASK-003 **In Progress** |
 
-## Suggested next slices
+## Implementation order (from plan)
 
-| Slice | Locks | Not in this slice |
-|-------|-------|-------------------|
-| 구현 · 모노레포 스캐폴드 | pnpm/turbo, apps/web+api, compose, CI skeleton | 비즈니스 로직 |
-| 구현 · 계정 (Better Auth) | 가입·로그인·쿠키 `.getpersona.md` | 페르소나 싱크 |
-| 구현 · 페르소나 등록·관리 | CRUD/archive, 소속 검사 | 쓰기 에이전트 |
-| 구현 · 성장 | remember/promote/project | 오케스트레이션 |
-| 구현 · Agent 흡수 | post/comment/reply from personaAgent | 게시 어댑터 |
-| 구현 · HTTP `/v1` + 키 + Swagger | 연결 면 | MCP |
-| 구현 · MCP | SDK on same api | 새 정책 |
-| 구현 · 싱크 잡 + 어댑터 경계 | BullMQ job shape | 실제 X/Threads 스크레이프 |
-| 품질 | 종류별 골드, 누수·길이 | 라이브 소셜 |
-| 후속 | admin 호스트, 결제, OTel, getDesign 시각 정렬 | — |
+| # | Milestone | Suggested TASK |
+|---|-----------|----------------|
+| M0 | DESIGN/LAYOUT/UX 잠금 + 모노레포 스캐폴드 | 구현: design lock + Next/Nest scaffold |
+| M1 | Better Auth 계정 | 구현: 가입·로그인 |
+| M2 | 페르소나 SoR + fork | 구현: 등록·관리·포크 |
+| M3 | Growth | 구현: remember/promote/project |
+| M4 | Agents | 구현: post/comment/reply 흡수 |
+| M5 | Connect | 구현: `/v1` + keys + Swagger |
+| M6 | MCP | 구현: MCP on api |
+| M7 | Sync boundary | 구현: BullMQ 싱크 잡 + stub adapter |
+| M8 | Quality | 구현: 골드·누수·harden |
 
-## Order hint
+## Deferred
 
-스캐폴드 → 계정 → 페르소나 SoR → 성장 → agent → `/v1` → MCP.  
-싱크 어댑터는 SoR·큐 이후. `persona_id` 없이 WriteJob을 열지 않는다.
+admin 호스트 · 결제 · feature flags · OTel · 실 플랫폼 스크레이프  
+(UI: M0에서 DESIGN/LAYOUT/UX 잠금)

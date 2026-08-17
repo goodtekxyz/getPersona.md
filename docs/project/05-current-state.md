@@ -4,49 +4,35 @@
 
 ## Stage
 
-- VibeOps 2.5.2. TASK-001(기획) **Shipped·merged** to `develop`.
-- TASK-002(스택·제품 표면 설계) **In Progress** on `task/002-next-nest-pg17-personaagent-agent`.
-- 애플리케이션 코드·스캐폴드 없음.
+- TASK-001·002 **Shipped** and merged to `develop`.
+- TASK-003 (전체 개발계획) **In Progress** on `task/003-task`.
+- 애플리케이션 코드 없음.
 
-## Product (planned)
+## Product / stack
 
-웹(랜딩·가입·로그인·등록·싱크·포크) + agent(post/comment/reply) + API/MCP.  
-호스트: `getpersona.md` / `agent.getpersona.md` / `api.getpersona.md`.  
-스택: [09-stack.md](09-stack.md).
+잠금 문서: `01`–`09`. 구현 순서: [10-dev-plan.md](10-dev-plan.md) (M0–M8).
 
 ## VibeOps
 
 | Item | Value |
 |------|-------|
-| CLI / config | `vibeops` 2.5.2 · `.vibeops.json` |
-| Agent client | Cursor |
-| Git host | GitHub `goodtekxyz/getPersona.md` (private) |
+| CLI | `vibeops` 2.5.2 |
 | Integration | `develop` |
 | Production | `main` |
-| Lifecycle | add → ship → merge → sync → release (`AGENTS.md` hard rules) |
+| Lifecycle | add → ship → merge → sync → release |
 
 ## Active TASK
 
-- `TASK-002` · 제품 표면·스택·호스트 고정 · In Progress
+- `TASK-003` · 개발계획 · In Progress
 
 ## Built
 
 | Area | State |
 |------|-------|
-| Project docs | `01`–`09` (002가 스택·표면 갱신 중) |
+| Docs | `01`–`10` |
 | Application | 없음 |
-| Tests / deploy | 없음 |
 
 ## Next step
 
-TASK-002 문서 확정 후 ship → merge. 다음 구현: 모노레포 스캐폴드 (Next+Nest+PG17).
-
-## Inventory
-
-| Path | Role |
-|------|------|
-| `.vibeops.json` | 프로젝트 설정 |
-| `AGENTS.md` | VibeOps hard rules |
-| `docs/project/` | 기획·설계 원본 |
-| `docs/tasks/` | TASK 원본 |
-| `docs/logs/` | 일자 로그 |
+TASK-003 ship → merge → sync 후, M0용 `vibeops task add`  
+(**getDesign.md 확인 → DESIGN/LAYOUT/UX 잠금 + 모노레포 스캐폴드**).
