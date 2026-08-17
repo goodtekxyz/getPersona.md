@@ -1,0 +1,37 @@
+{
+  "brand": "getPersona.md",
+  "nav": {
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "home": "Home"
+  },
+  "landing": {
+    "eyebrow": "PERSONA PLATFORM",
+    "headline": "Personas you can register, sync, and write with.",
+    "support": "Account first. Agents and API come next.",
+    "ctaSignUp": "Sign up",
+    "ctaSignIn": "Sign in"
+  },
+  "auth": {
+    "signUpTitle": "Create account",
+    "signInTitle": "Sign in",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "terms": "I agree to the Terms and Privacy Policy.",
+    "submitSignUp": "Sign up",
+    "submitSignIn": "Sign in",
+    "haveAccount": "Already have an account?",
+    "needAccount": "Need an account?",
+    "termsLink": "Terms",
+    "privacyLink": "Privacy",
+    "errorGeneric": "Something went wrong. Try again.",
+    "oauthGithub": "Continue with GitHub",
+    "oauthGoogle": "Continue with Google",
+    "oauthStub": "OAuth providers appear when configured."
+  },
+  "footer": {
+    "legal": "Legal",
+    "product": "Product"
+  }
+}

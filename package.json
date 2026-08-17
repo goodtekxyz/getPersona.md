@@ -15,6 +15,7 @@
     "test": "turbo run test",
     "infra:up": "podman compose up -d",
     "infra:down": "podman compose down",
+    "auth:migrate": "pnpm --filter @getpersona/api auth:migrate",
     "prepare": "husky || true"
   },
   "devDependencies": {

@@ -1,5 +1,18 @@
 import type { Metadata } from 'next';
+import { DM_Sans, Syne } from 'next/font/google';
 import './globals.css';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-body',
+});
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['500'],
+  variable: '--font-display',
+});
 
 export const metadata: Metadata = {
   title: 'getPersona.md',
@@ -8,15 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Syne:wght@500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${dmSans.variable} ${syne.variable}`}>
       <body>{children}</body>
     </html>
   );

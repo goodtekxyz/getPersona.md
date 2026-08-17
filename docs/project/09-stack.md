@@ -4,11 +4,11 @@
 
 ## Monorepo
 
-| Path | Package | Role |
-|------|---------|------|
-| `apps/web` | `@getpersona/web` | Next.js — 랜딩·가입·로그인·페르소나 UI |
-| `apps/api` | `@getpersona/api` | NestJS — REST `/v1`, MCP, agent 모듈 |
-| `packages/*` | `@getpersona/shared`, `@getpersona/agent-*`, … | 공유 스키마·에이전트 코어 |
+| Path         | Package                                        | Role                                   |
+| ------------ | ---------------------------------------------- | -------------------------------------- |
+| `apps/web`   | `@getpersona/web`                              | Next.js — 랜딩·가입·로그인·페르소나 UI |
+| `apps/api`   | `@getpersona/api`                              | NestJS — REST `/v1`, MCP, agent 모듈   |
+| `packages/*` | `@getpersona/shared`, `@getpersona/agent-*`, … | 공유 스키마·에이전트 코어              |
 
 - Workspace: **pnpm** + **Turborepo**
 - Lint/format: ESLint 9 flat + Prettier · Husky + lint-staged
@@ -16,48 +16,50 @@
 
 ## Versions (locked 2026-08-17)
 
-| Layer | Choice | Version |
-|-------|--------|---------|
-| Node.js | Active LTS | **24** (engines `>=24 <25`) |
-| pnpm | workspace | **11.22.x** |
-| TypeScript | — | **5.9.x** |
-| Turbo | — | **2.x** |
-| Next.js | App Router | **16.3.x** |
-| React | — | **19.2.x** |
-| NestJS | Express adapter | **11.2.x** (+ Nest CLI 11) |
-| DB | Postgres | **17** |
-| ORM | TypeORM + `@nestjs/typeorm` | TypeORM **1.x**, nest typeorm **11** |
-| Auth | Better Auth | **1.6.x** |
-| Validation | class-validator (API DTO) + Zod (shared/agent) | **0.15** / **4.4** |
-| Queue | Redis + BullMQ | BullMQ **6.x** |
-| MCP | `@modelcontextprotocol/sdk` in `apps/api` | **1.30.x** |
-| API docs | `@nestjs/swagger` | **11.4.x** |
-| Log | Pino / nestjs-pino | pino **10** / nestjs-pino **4.6** |
-| CSS | **DESIGN.md / LAYOUT.md / UX.md** (M0a 잠금, getDesign.md 벤치). 구현 토큰은 DESIGN 따름 | — |
-| i18n | next-intl (ko/en) | **4.13.x** |
-| Test | Jest (`apps/api`) + Vitest (`apps/web`) | — |
-| Object storage | S3-compatible | **`s3.goodtek.xyz`** |
-| Secrets | Infisical | — |
-| Mail | Self-hosted SMTP | — |
-| CI | GitHub Actions **self-hosted** runners | — |
-| Deploy | Self-host (Podman/VM) | — |
-| LLM | **llm_wrapper gateway only** | — |
-| IDs | ULID / UUIDv7 | — |
-| Time | UTC in DB/API; local in UI | — |
+| Layer          | Choice                                                                                   | Version                              |
+| -------------- | ---------------------------------------------------------------------------------------- | ------------------------------------ |
+| Node.js        | Active LTS                                                                               | **24** (engines `>=24 <25`)          |
+| pnpm           | workspace                                                                                | **11.22.x**                          |
+| TypeScript     | —                                                                                        | **5.9.x**                            |
+| Turbo          | —                                                                                        | **2.x**                              |
+| Next.js        | App Router                                                                               | **16.3.x**                           |
+| React          | —                                                                                        | **19.2.x**                           |
+| NestJS         | Express adapter                                                                          | **11.2.x** (+ Nest CLI 11)           |
+| DB             | Postgres                                                                                 | **17**                               |
+| ORM            | TypeORM + `@nestjs/typeorm`                                                              | TypeORM **1.x**, nest typeorm **11** |
+| Auth           | Better Auth                                                                              | **1.6.x**                            |
+| Validation     | class-validator (API DTO) + Zod (shared/agent)                                           | **0.15** / **4.4**                   |
+| Queue          | Redis + BullMQ                                                                           | BullMQ **6.x**                       |
+| MCP            | `@modelcontextprotocol/sdk` in `apps/api`                                                | **1.30.x**                           |
+| API docs       | `@nestjs/swagger`                                                                        | **11.4.x**                           |
+| Log            | Pino / nestjs-pino                                                                       | pino **10** / nestjs-pino **4.6**    |
+| CSS            | **DESIGN.md / LAYOUT.md / UX.md** (M0a 잠금, getDesign.md 벤치). 구현 토큰은 DESIGN 따름 | —                                    |
+| i18n           | next-intl (ko/en)                                                                        | **4.13.x**                           |
+| Test           | Jest (`apps/api`) + Vitest (`apps/web`)                                                  | —                                    |
+| Object storage | S3-compatible                                                                            | **`s3.goodtek.xyz`**                 |
+| Secrets        | Infisical                                                                                | —                                    |
+| Mail           | Self-hosted SMTP                                                                         | —                                    |
+| CI             | GitHub Actions **self-hosted** runners                                                   | —                                    |
+| Deploy         | Self-host (Podman/VM)                                                                    | —                                    |
+| LLM            | **llm_wrapper gateway only**                                                             | —                                    |
+| IDs            | ULID / UUIDv7                                                                            | —                                    |
+| Time           | UTC in DB/API; local in UI                                                               | —                                    |
 
 ## Hosts
 
-| Host | Surface |
-|------|---------|
-| `getpersona.md` | Web product |
+| Host                  | Surface                                      |
+| --------------------- | -------------------------------------------- |
+| `getpersona.md`       | Web product                                  |
 | `agent.getpersona.md` | Agent collective (post / comment / reply, …) |
-| `api.getpersona.md` | Connection methods: REST `/v1` + MCP |
+| `api.getpersona.md`   | Connection methods: REST `/v1` + MCP         |
 
 내부적으로 `agent.`와 `api.`는 **같은 `apps/api` 프로세스**를 가리킨다 (리버스 프록시). 에이전트↔코어는 in-process DI이며 HTTP 홉이 아니다.
 
-세션 쿠키: **`.getpersona.md`** 공유 (Better Auth).
+세션 쿠키: **`.getpersona.md`** 공유 (Better Auth) via `AUTH_COOKIE_DOMAIN` in production.
 
-CORS: 위 호스트(+ www)와 로컬 dev 화이트리스트.
+Local: leave `AUTH_COOKIE_DOMAIN` unset (host-only cookie on the API origin). Web calls API with `credentials: include`; CORS allows `WEB_ORIGIN` / `TRUSTED_ORIGINS`.
+
+CORS: 위 호스트(+ www)와 로컬 dev 화이트리스트 (`TRUSTED_ORIGINS`).
 
 ## Agent absorption
 

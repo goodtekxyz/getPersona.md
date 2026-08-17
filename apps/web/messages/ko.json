@@ -1,0 +1,37 @@
+{
+  "brand": "getPersona.md",
+  "nav": {
+    "signIn": "로그인",
+    "signUp": "가입",
+    "home": "홈"
+  },
+  "landing": {
+    "eyebrow": "PERSONA PLATFORM",
+    "headline": "등록하고, 싱크하고, 글로 쓰는 페르소나.",
+    "support": "계정부터. 에이전트와 API는 이어서.",
+    "ctaSignUp": "가입",
+    "ctaSignIn": "로그인"
+  },
+  "auth": {
+    "signUpTitle": "계정 만들기",
+    "signInTitle": "로그인",
+    "name": "이름",
+    "email": "이메일",
+    "password": "비밀번호",
+    "terms": "이용약관과 개인정보 처리방침에 동의합니다.",
+    "submitSignUp": "가입",
+    "submitSignIn": "로그인",
+    "haveAccount": "이미 계정이 있나요?",
+    "needAccount": "계정이 필요하신가요?",
+    "termsLink": "약관",
+    "privacyLink": "개인정보",
+    "errorGeneric": "문제가 생겼습니다. 다시 시도하세요.",
+    "oauthGithub": "GitHub로 계속",
+    "oauthGoogle": "Google로 계속",
+    "oauthStub": "OAuth는 설정 시 표시됩니다."
+  },
+  "footer": {
+    "legal": "법적 고지",
+    "product": "제품"
+  }
+}
