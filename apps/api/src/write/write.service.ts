@@ -92,7 +92,13 @@ export class WriteService {
       });
     }
 
-    const laws = writeLawCodes({ text: artifact, source: sourceFlat, maxChars });
+    const language = input.language ?? project.language ?? null;
+    const laws = writeLawCodes({
+      text: artifact,
+      source: sourceFlat,
+      maxChars,
+      language,
+    });
     trace.laws = laws;
     if (laws.length > 0) {
       return this.persist(actorUserId, input, {
@@ -134,7 +140,12 @@ export class WriteService {
     }
 
     // Re-check laws after judge (defense in depth; judge must not rewrite).
-    const postLaws = writeLawCodes({ text: artifact, source: sourceFlat, maxChars });
+    const postLaws = writeLawCodes({
+      text: artifact,
+      source: sourceFlat,
+      maxChars,
+      language,
+    });
     if (postLaws.length > 0) {
       return this.persist(actorUserId, input, {
         status: 'skip',

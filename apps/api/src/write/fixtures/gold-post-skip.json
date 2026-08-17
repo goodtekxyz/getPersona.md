@@ -1,0 +1,7 @@
+{
+  "id": "gold-post-skip-cue",
+  "kind": "post",
+  "language": "en",
+  "source": { "text": "SKIP_PLEASE" },
+  "expect": { "status": "skip" }
+}

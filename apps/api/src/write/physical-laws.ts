@@ -2,6 +2,9 @@
 
 const LEAK = /getPersona|personaAgent|PERSONA\.md|task_profile|card_terms|L0 compile|dispatchId/gi;
 
+const HANGUL = /[\uAC00-\uD7A3]/g;
+const LATIN = /[A-Za-z]/g;
+
 export const DEFAULT_PUBLIC_LINE_MAX = 280;
 
 /**
@@ -15,15 +18,44 @@ export function physicalFailCodes(text: string, source = ''): string[] {
   return leaked.length > 0 ? ['internal_leak'] : [];
 }
 
+/**
+ * Heuristic language mismatch (ko ↔ en). Short / mixed / unknown langs → no fail.
+ * Does not require a golden sentence — only script dominance vs requested language.
+ */
+export function languageFailCodes(text: string, language?: string | null): string[] {
+  if (!language) return [];
+  const lang = language.trim().toLowerCase();
+  const hangul = (text.match(HANGUL) ?? []).length;
+  const latin = (text.match(LATIN) ?? []).length;
+  const letters = hangul + latin;
+  if (letters < 8) return [];
+
+  const isKo = lang === 'ko' || lang === 'kr' || lang.startsWith('ko-');
+  const isEn = lang === 'en' || lang.startsWith('en-');
+  if (!isKo && !isEn) return [];
+
+  if (isKo && hangul === 0 && latin / letters >= 0.7) {
+    return ['wrong_language'];
+  }
+  if (isEn && latin === 0 && hangul / letters >= 0.7) {
+    return ['wrong_language'];
+  }
+  return [];
+}
+
 export function writeLawCodes(input: {
   text: string;
   source?: string;
   maxChars?: number;
+  language?: string | null;
 }): string[] {
   const text = input.text.trim();
   const codes = new Set(physicalFailCodes(text, input.source ?? ''));
   const max = input.maxChars ?? DEFAULT_PUBLIC_LINE_MAX;
   if (text.length > max) codes.add('over_length');
+  for (const code of languageFailCodes(text, input.language)) {
+    codes.add(code);
+  }
   return [...codes];
 }
 

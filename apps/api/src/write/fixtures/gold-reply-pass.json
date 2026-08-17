@@ -1,0 +1,7 @@
+{
+  "id": "gold-reply-pass-shape",
+  "kind": "reply",
+  "language": "en",
+  "source": { "thread": [{ "text": "hello — any update?" }] },
+  "expect": { "status": "text" }
+}

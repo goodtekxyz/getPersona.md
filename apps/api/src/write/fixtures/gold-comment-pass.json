@@ -1,0 +1,7 @@
+{
+  "id": "gold-comment-pass-shape",
+  "kind": "comment",
+  "language": "en",
+  "source": { "text": "nice post on the release" },
+  "expect": { "status": "text" }
+}
