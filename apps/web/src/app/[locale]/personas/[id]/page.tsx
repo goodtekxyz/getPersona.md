@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { RequireAuth } from '@/components/require-auth';
 import { PersonaDetailEditor } from '@/components/persona-detail-editor';
+import { PersonaSyncPanel } from '@/components/persona-sync-panel';
 
 export default async function PersonaDetailPage({
   params,
@@ -21,6 +22,7 @@ export default async function PersonaDetailPage({
         {t('detailTitle')}
       </h1>
       <PersonaDetailEditor id={id} />
+      <PersonaSyncPanel personaId={id} />
     </RequireAuth>
   );
 }

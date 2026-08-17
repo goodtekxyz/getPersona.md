@@ -4,8 +4,8 @@
 
 ## Stage
 
-- TASK-001–009 shipped (or present on develop) for M0–M5.
-- TASK-010 (M6 MCP) **In Progress** on `task/010-m6-mcp-server-on-apps-api-same-core`.
+- TASK-001–010 shipped (or present on develop) for M0–M6.
+- TASK-011 (M7 Sync job boundary) **In Progress** on `task/011-m7-sync-job-bullmq-stub-adapters`.
 
 ## Product / stack
 
@@ -13,7 +13,7 @@ Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](1
 
 ## Active TASK
 
-- `TASK-010` · M6 · In Progress
+- `TASK-011` · M7 · In Progress
 
 ## Built
 
@@ -27,10 +27,11 @@ Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](1
 | Session    | Cookie host-only locally; `AUTH_COOKIE_DOMAIN=.getpersona.md` for prod                                        |
 | Me         | `GET /v1/me` — session user or API key owner                                                                  |
 | Personas   | TypeORM entity + `/v1/personas` CRUD/archive/fork; Zod in `@getpersona/shared`                                |
-| Web SoR UI | Auth-gated `/personas`, `/personas/new`, `/personas/[id]`                                                     |
+| Web SoR UI | Auth-gated `/personas`, `/personas/new`, `/personas/[id]` (+ sync panel)                                      |
 | Growth     | `/v1/growth` remember / promote (promote scope) / project; episodes, candidates, ltm_memories, growth_audits  |
 | Promote    | API key `promote` scope or session operator; write-only key → 403; identity/voice/boundary need `confirmGate` |
 | Write      | `POST /v1/write` project→draft→judge→text\|skip; llm_wrapper or stub; `write_runs` trace; physical laws       |
+| Sync       | BullMQ (+ in-process fallback); stub blog/X/Threads adapters; S3 artifact stub; `POST/GET /v1/sync`           |
 | API keys   | `/v1/api-keys` create (plaintext once) / list / revoke; sha256 hash only; scopes write\|promote               |
 | Rate limit | Redis fixed window via ioredis (memory fallback); per account + per key (`/v1` and `/mcp`)                    |
 | Swagger    | `@nestjs/swagger` UI at `/docs`                                                                               |
@@ -40,4 +41,4 @@ Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](1
 
 ## Next step
 
-Ship TASK-010 → M7 Sync job boundary.
+Ship TASK-011 → M8 Quality & harden.
