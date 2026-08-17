@@ -1,0 +1,7 @@
+{
+  "id": "gold-post-pass-shape",
+  "kind": "post",
+  "language": "en",
+  "source": { "text": "we shipped growth remember promote" },
+  "expect": { "status": "text" }
+}

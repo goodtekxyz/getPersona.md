@@ -1,0 +1,7 @@
+{
+  "id": "gold-comment-skip-cue",
+  "kind": "comment",
+  "language": "en",
+  "source": { "text": "SKIP_PLEASE" },
+  "expect": { "status": "skip" }
+}

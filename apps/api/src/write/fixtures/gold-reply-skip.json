@@ -1,0 +1,7 @@
+{
+  "id": "gold-reply-skip-cue",
+  "kind": "reply",
+  "language": "en",
+  "source": { "text": "SKIP_PLEASE", "thread": [{ "text": "ping" }] },
+  "expect": { "status": "skip" }
+}
