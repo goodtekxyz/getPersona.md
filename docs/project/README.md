@@ -13,5 +13,10 @@
 | [07-growth.md](07-growth.md) | 등록·관리·성장, 기억 접근 |
 | [08-roadmap.md](08-roadmap.md) | 후속 TASK 분해 |
 | [09-stack.md](09-stack.md) | 스택·호스트·버전 (TASK-002) |
+| [10-dev-plan.md](10-dev-plan.md) | 전체 구현 마일스톤 (TASK-003) |
+| [DESIGN.md](DESIGN.md) | 디자인 요소 (M0a, getDesign.md 벤치) — *스캐폴드 시 작성* |
+| [LAYOUT.md](LAYOUT.md) | 레이아웃 (M0a) — *스캐폴드 시 작성* |
+| [UX.md](UX.md) | UX 규칙 (M0a) — *스캐폴드 시 작성* |
 
-기획: `docs/tasks/TASK-001-task.md`. 스택 설계: `docs/tasks/TASK-002-*.md`.
+기획: `TASK-001`. 스택: `TASK-002`. 개발계획: `TASK-003`.  
+UI SoR(예정): `DESIGN.md` · `LAYOUT.md` · `UX.md` (M0 스캐폴드 TASK에서 getDesign.md 확인 후 잠금).

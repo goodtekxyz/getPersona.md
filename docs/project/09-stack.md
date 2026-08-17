@@ -33,7 +33,7 @@
 | MCP | `@modelcontextprotocol/sdk` in `apps/api` | **1.30.x** |
 | API docs | `@nestjs/swagger` | **11.4.x** |
 | Log | Pino / nestjs-pino | pino **10** / nestjs-pino **4.6** |
-| CSS (interim) | Tailwind → later align to getDesign.md | **4.3.x** |
+| CSS | **DESIGN.md / LAYOUT.md / UX.md** (M0a 잠금, getDesign.md 벤치). 구현 토큰은 DESIGN 따름 | — |
 | i18n | next-intl (ko/en) | **4.13.x** |
 | Test | Jest (`apps/api`) + Vitest (`apps/web`) | — |
 | Object storage | S3-compatible | **`s3.goodtek.xyz`** |
@@ -68,5 +68,5 @@ CORS: 위 호스트(+ www)와 로컬 dev 화이트리스트.
 - Feature flags, OpenTelemetry, payments
 - `admin.getpersona.md`
 - Platform adapter implementations (blog / X / Threads)
-- Tailwind → getDesign.md visual alignment pass
 - CSP hardening beyond baseline Helmet headers
+- (UI 정렬은 M0a `DESIGN.md`/`LAYOUT.md`/`UX.md`로 잠금 — 후속 “시각 패스”가 아님)

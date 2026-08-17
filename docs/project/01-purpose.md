@@ -18,7 +18,7 @@
 ## What this product is
 
 - 페르소나의 시스템 오브 레코드: 정체성, 보이스, 경계, 권한, 기억.
-- 웹: 랜딩, 회원가입, 로그인, 페르소나 등록·싱크·포크 (UX는 `getDesign.md` 벤치마크).
+- 웹: 랜딩, 회원가입, 로그인, 페르소나 등록·싱크·포크 (UX는 **getDesign.md 벤치 → M0에서 DESIGN/LAYOUT/UX로 잠금**).
 - Agent 표면: post / comment / reply 등 역할 에이전트 (`agent.getpersona.md`).
 - 연결: REST API + MCP (`api.getpersona.md`). 키 또는 (명시적) 퍼블릭.
 
@@ -42,4 +42,4 @@
 
 ## Locked sentence
 
-페르소나가 원본이다. 글은 그 페르소나의 투영이다. Agent는 문장 또는 skip을 만든다. API·MCP는 연결이다. 디자인 벤치마크는 getDesign.md다.
+페르소나가 원본이다. 글은 그 페르소나의 투영이다. Agent는 문장 또는 skip을 만든다. API·MCP는 연결이다. UI SoR는 DESIGN/LAYOUT/UX(getDesign.md 벤치)다.
