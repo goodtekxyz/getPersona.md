@@ -21,14 +21,14 @@ Browser / Client / MCP
 
 ## Layers
 
-| Layer | What | LLM? |
-|-------|------|------|
-| Web | 랜딩·계정·페르소나 UI | No |
-| Contract | 등록·관리된 페르소나 | No |
-| Memory | 에피소드·후보·LTM | No (쓰기). 판단은 에이전트 |
-| Compile / project | 이번 일용 좁은 계약 | No |
-| Write agents | kind별 초안·판정 → text \| skip | Yes |
-| Physical laws | 길이, 누수, 세션 분리, judge 재작성 금지 | No |
+| Layer             | What                                     | LLM?                       |
+| ----------------- | ---------------------------------------- | -------------------------- |
+| Web               | 랜딩·계정·페르소나 UI                    | No                         |
+| Contract          | 등록·관리된 페르소나                     | No                         |
+| Memory            | 에피소드·후보·LTM                        | No (쓰기). 판단은 에이전트 |
+| Compile / project | 이번 일용 좁은 계약                      | No                         |
+| Write agents      | kind별 초안·판정 → text \| skip          | Yes                        |
+| Physical laws     | 길이, 누수, 세션 분리, judge 재작성 금지 | No                         |
 
 ## Write path
 
@@ -43,13 +43,14 @@ WriteJob { persona_id, kind, channel, language, source, constraints }
 
 ## Key paths (today)
 
-| Area | Path |
-|------|------|
-| Stack / hosts | `docs/project/09-stack.md` |
-| Product | `docs/project/02-product.md` |
-| Agent API | `docs/project/04-api.md` |
-| TASK | `docs/tasks/` |
-| Application | (none yet — scaffold is next) |
+| Area          | Path                                      |
+| ------------- | ----------------------------------------- |
+| Stack / hosts | `docs/project/09-stack.md`                |
+| Product       | `docs/project/02-product.md`              |
+| Agent API     | `docs/project/04-api.md`                  |
+| Write         | `POST /v1/write` (`apps/api/src/write`)   |
+| TASK          | `docs/tasks/`                             |
+| Application   | `apps/web`, `apps/api`, `packages/shared` |
 
 ## Process (VibeOps)
 

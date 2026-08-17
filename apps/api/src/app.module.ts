@@ -12,6 +12,8 @@ import { EpisodeEntity } from './growth/episode.entity.js';
 import { CandidateEntity } from './growth/candidate.entity.js';
 import { LtmMemoryEntity } from './growth/ltm-memory.entity.js';
 import { GrowthAuditEntity } from './growth/growth-audit.entity.js';
+import { WriteModule } from './write/write.module.js';
+import { WriteRunEntity } from './write/write-run.entity.js';
 import { auth } from './auth/auth.js';
 
 const synchronize =
@@ -28,7 +30,14 @@ const synchronize =
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
-      entities: [PersonaEntity, EpisodeEntity, CandidateEntity, LtmMemoryEntity, GrowthAuditEntity],
+      entities: [
+        PersonaEntity,
+        EpisodeEntity,
+        CandidateEntity,
+        LtmMemoryEntity,
+        GrowthAuditEntity,
+        WriteRunEntity,
+      ],
       synchronize,
       logging: process.env.TYPEORM_LOGGING === 'true',
     }),
@@ -39,6 +48,7 @@ const synchronize =
     }),
     PersonasModule,
     GrowthModule,
+    WriteModule,
   ],
   controllers: [HealthController, MeController],
 })
