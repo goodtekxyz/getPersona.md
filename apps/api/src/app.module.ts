@@ -14,6 +14,10 @@ import { LtmMemoryEntity } from './growth/ltm-memory.entity.js';
 import { GrowthAuditEntity } from './growth/growth-audit.entity.js';
 import { WriteModule } from './write/write.module.js';
 import { WriteRunEntity } from './write/write-run.entity.js';
+import { ApiKeysModule } from './api-keys/api-keys.module.js';
+import { ApiKeyEntity } from './api-keys/api-key.entity.js';
+import { RateLimitModule } from './rate-limit/rate-limit.module.js';
+import { ActorRateLimitMiddleware } from './rate-limit/actor-rate-limit.middleware.js';
 import { auth } from './auth/auth.js';
 
 const synchronize =
@@ -37,6 +41,7 @@ const synchronize =
         LtmMemoryEntity,
         GrowthAuditEntity,
         WriteRunEntity,
+        ApiKeyEntity,
       ],
       synchronize,
       logging: process.env.TYPEORM_LOGGING === 'true',
@@ -46,6 +51,8 @@ const synchronize =
       // Keep /health public without decorating every future public route.
       disableGlobalAuthGuard: true,
     }),
+    ApiKeysModule,
+    RateLimitModule,
     PersonasModule,
     GrowthModule,
     WriteModule,
@@ -55,5 +62,6 @@ const synchronize =
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(HelmetMiddleware).forRoutes('*');
+    consumer.apply(ActorRateLimitMiddleware).forRoutes('*');
   }
 }

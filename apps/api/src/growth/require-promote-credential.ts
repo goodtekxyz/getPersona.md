@@ -1,23 +1,24 @@
 import { ForbiddenException, UnauthorizedException } from '@nestjs/common';
-import type { Request } from 'express';
-
-/** Header carrying the promote credential (separate from write/session auth). */
-export const PROMOTE_CREDENTIAL_HEADER = 'x-promote-credential';
+import type { Actor } from '../auth/actor-types.js';
+import { requireScope } from '../auth/actor-types.js';
 
 /**
- * Promote must use a dedicated credential — session/write alone is not enough (D-007).
- * Configure via PROMOTE_CREDENTIAL env (M5 will swap for hashed API keys).
+ * Promote requires promote scope on the API key (or session operator).
+ * Replaces env PROMOTE_CREDENTIAL (D-007 / M5 hashed keys).
  */
-export function requirePromoteCredential(req: Request): void {
-  const expected = process.env.PROMOTE_CREDENTIAL?.trim();
-  if (!expected) {
-    throw new ForbiddenException('Promote credential is not configured.');
-  }
-  const provided = req.header(PROMOTE_CREDENTIAL_HEADER)?.trim();
-  if (!provided) {
+export function requirePromoteAccess(actor: Actor): void {
+  requireScope(actor, 'promote');
+}
+
+/** @deprecated Prefer requirePromoteAccess(actor) — kept for test migration clarity. */
+export function assertPromoteAllowed(actor: Actor | null | undefined): void {
+  if (!actor) {
     throw new UnauthorizedException('Promote credential required.');
   }
-  if (provided !== expected) {
-    throw new ForbiddenException('Invalid promote credential.');
+  try {
+    requirePromoteAccess(actor);
+  } catch (err) {
+    if (err instanceof ForbiddenException) throw err;
+    throw err;
   }
 }

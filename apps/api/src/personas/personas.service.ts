@@ -96,6 +96,15 @@ export class PersonasService {
     return serializePersona(entity);
   }
 
+  /** Unauthenticated public allowlist — only isPublic, non-archived personas. */
+  async getPublic(id: string) {
+    const entity = await this.findById(id);
+    if (!entity.isPublic || entity.archivedAt) {
+      throw new ForbiddenException("You don't have access to this persona.");
+    }
+    return serializePersona(entity);
+  }
+
   async patch(id: string, ownerUserId: string, raw: PatchPersonaDto) {
     const input = patchPersonaSchema.parse(raw);
     const entity = await this.requireOwner(id, ownerUserId);

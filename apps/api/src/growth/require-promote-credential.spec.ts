@@ -1,42 +1,33 @@
 import { ForbiddenException, UnauthorizedException } from '@nestjs/common';
-import type { Request } from 'express';
-import {
-  PROMOTE_CREDENTIAL_HEADER,
-  requirePromoteCredential,
-} from './require-promote-credential.js';
+import type { Actor } from '../auth/actor-types.js';
+import { assertPromoteAllowed, requirePromoteAccess } from './require-promote-credential.js';
 
-describe('requirePromoteCredential', () => {
-  const prev = process.env.PROMOTE_CREDENTIAL;
-
-  afterEach(() => {
-    if (prev === undefined) delete process.env.PROMOTE_CREDENTIAL;
-    else process.env.PROMOTE_CREDENTIAL = prev;
-  });
-
-  function reqWith(header?: string): Request {
+describe('requirePromoteAccess', () => {
+  function actor(
+    scopes: Array<'write' | 'promote'>,
+    authType: Actor['authType'] = 'api_key',
+  ): Actor {
     return {
-      header: (name: string) =>
-        name.toLowerCase() === PROMOTE_CREDENTIAL_HEADER ? header : undefined,
-    } as Request;
+      userId: 'u1',
+      authType,
+      scopes: new Set(scopes),
+      apiKeyId: authType === 'api_key' ? 'k1' : undefined,
+    };
   }
 
-  it('rejects missing header', () => {
-    process.env.PROMOTE_CREDENTIAL = 'secret';
-    expect(() => requirePromoteCredential(reqWith(undefined))).toThrow(UnauthorizedException);
+  it('rejects write-only API key', () => {
+    expect(() => requirePromoteAccess(actor(['write']))).toThrow(ForbiddenException);
   });
 
-  it('rejects wrong credential', () => {
-    process.env.PROMOTE_CREDENTIAL = 'secret';
-    expect(() => requirePromoteCredential(reqWith('nope'))).toThrow(ForbiddenException);
+  it('accepts promote-scoped API key', () => {
+    expect(() => requirePromoteAccess(actor(['promote']))).not.toThrow();
   });
 
-  it('accepts matching credential', () => {
-    process.env.PROMOTE_CREDENTIAL = 'secret';
-    expect(() => requirePromoteCredential(reqWith('secret'))).not.toThrow();
+  it('accepts session operator (write+promote)', () => {
+    expect(() => requirePromoteAccess(actor(['write', 'promote'], 'session'))).not.toThrow();
   });
 
-  it('rejects when not configured', () => {
-    delete process.env.PROMOTE_CREDENTIAL;
-    expect(() => requirePromoteCredential(reqWith('secret'))).toThrow(ForbiddenException);
+  it('assertPromoteAllowed rejects missing actor', () => {
+    expect(() => assertPromoteAllowed(null)).toThrow(UnauthorizedException);
   });
 });
