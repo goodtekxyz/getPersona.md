@@ -2,12 +2,15 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
+import { useSession, signOut } from '@/lib/auth-client';
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();
   const other = locale === 'ko' ? 'en' : 'ko';
+  const { data } = useSession();
+  const signedIn = Boolean(data?.user);
 
   return (
     <div className="shell">
@@ -16,12 +19,31 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           {t('brand')}
         </Link>
         <nav className="nav-links" aria-label="Primary">
-          <Link href="/sign-in" data-active={pathname.includes('sign-in') ? 'true' : 'false'}>
-            {t('nav.signIn')}
-          </Link>
-          <Link href="/sign-up" data-active={pathname.includes('sign-up') ? 'true' : 'false'}>
-            {t('nav.signUp')}
-          </Link>
+          {signedIn ? (
+            <>
+              <Link href="/personas" data-active={pathname.includes('personas') ? 'true' : 'false'}>
+                Personas
+              </Link>
+              <button
+                type="button"
+                className="nav-text-btn"
+                onClick={() => {
+                  void signOut();
+                }}
+              >
+                Sign out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link href="/sign-in" data-active={pathname.includes('sign-in') ? 'true' : 'false'}>
+                {t('nav.signIn')}
+              </Link>
+              <Link href="/sign-up" data-active={pathname.includes('sign-up') ? 'true' : 'false'}>
+                {t('nav.signUp')}
+              </Link>
+            </>
+          )}
           <Link href={pathname || '/'} locale={other}>
             {other.toUpperCase()}
           </Link>

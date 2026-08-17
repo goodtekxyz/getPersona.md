@@ -27,7 +27,7 @@ export function SignInForm() {
       setError(err.message || t('errorGeneric'));
       return;
     }
-    router.push('/');
+    router.push('/personas');
   }
 
   return (

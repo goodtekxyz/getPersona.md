@@ -35,7 +35,7 @@ export function SignUpForm() {
       setError(err.message || t('errorGeneric'));
       return;
     }
-    router.push('/');
+    router.push('/personas');
   }
 
   return (
