@@ -140,6 +140,61 @@ export class PersonasService {
     return serializePersona(entity);
   }
 
+  /** Growth / write agents: owned, non-archived persona or 403/404. */
+  async requireOwnedActive(id: string, ownerUserId: string): Promise<PersonaEntity> {
+    const entity = await this.requireOwner(id, ownerUserId);
+    if (entity.archivedAt) {
+      throw new ForbiddenException('Persona is archived.');
+    }
+    return entity;
+  }
+
+  /**
+   * Apply a gated contract promote (identity / voice / boundary) onto the SoR.
+   * Payload is a shallow merge of known contract fields only.
+   */
+  async applyPromotedContract(
+    id: string,
+    ownerUserId: string,
+    kind: 'identity' | 'voice' | 'boundary',
+    payload: Record<string, unknown>,
+  ): Promise<PersonaEntity> {
+    const entity = await this.requireOwnedActive(id, ownerUserId);
+    if (kind === 'identity') {
+      entity.identity = {
+        ...entity.identity,
+        ...(typeof payload.who === 'string' ? { who: payload.who } : {}),
+        ...(typeof payload.intent === 'string' ? { intent: payload.intent } : {}),
+        ...(typeof payload.language === 'string' ? { language: payload.language } : {}),
+      };
+    } else if (kind === 'voice') {
+      entity.voice = {
+        ...entity.voice,
+        ...(typeof payload.typing === 'string' ? { typing: payload.typing } : {}),
+        ...(typeof payload.stance === 'string' ? { stance: payload.stance } : {}),
+        ...(Array.isArray(payload.sampleSentences)
+          ? {
+              sampleSentences: (payload.sampleSentences as unknown[])
+                .filter((s): s is string => typeof s === 'string')
+                .slice(0, 3),
+            }
+          : {}),
+      };
+    } else {
+      entity.boundaries = {
+        ...entity.boundaries,
+        ...(Array.isArray(payload.doNotSay)
+          ? {
+              doNotSay: (payload.doNotSay as unknown[]).filter(
+                (s): s is string => typeof s === 'string',
+              ),
+            }
+          : {}),
+      };
+    }
+    return this.personas.save(entity);
+  }
+
   async fork(sourceId: string, ownerUserId: string) {
     const source = await this.findById(sourceId);
     if (!source.isPublic || source.archivedAt) {
