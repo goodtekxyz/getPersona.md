@@ -114,6 +114,16 @@ Local:
 
 `Health` — 프로세스 생존. 페르소나·모델 준비와 섞지 않는다.
 
+## Sync (job boundary)
+
+| Op            | Does                                                                 |
+| ------------- | -------------------------------------------------------------------- |
+| `EnqueueSync` | `persona_id` + source handles (blog / X / Threads) → job `queued`    |
+| `GetSyncJob`  | 상태 `queued` \| `running` \| `done` \| `failed` + stub adapter 결과 |
+
+경로: `POST /v1/sync`, `GET /v1/sync/:jobId`. Auth: Bearer write 키 또는 세션.  
+어댑터는 **stub** (실 스크레이프 없음). 원시 아티팩트는 S3 클라이언트 stub (`s3.goodtek.xyz` env). 후보/계약 패치 훅은 no-op.
+
 ## Rules
 
 - 페르소나 전체나 memory dump를 응답하지 않는다.

@@ -19,6 +19,8 @@ import { ApiKeyEntity } from './api-keys/api-key.entity.js';
 import { RateLimitModule } from './rate-limit/rate-limit.module.js';
 import { ActorRateLimitMiddleware } from './rate-limit/actor-rate-limit.middleware.js';
 import { McpModule } from './mcp/mcp.module.js';
+import { SyncModule } from './sync/sync.module.js';
+import { SyncJobEntity } from './sync/sync-job.entity.js';
 import { auth } from './auth/auth.js';
 
 const synchronize =
@@ -43,6 +45,7 @@ const synchronize =
         GrowthAuditEntity,
         WriteRunEntity,
         ApiKeyEntity,
+        SyncJobEntity,
       ],
       synchronize,
       logging: process.env.TYPEORM_LOGGING === 'true',
@@ -58,6 +61,7 @@ const synchronize =
     GrowthModule,
     WriteModule,
     McpModule,
+    SyncModule,
   ],
   controllers: [HealthController, MeController],
 })

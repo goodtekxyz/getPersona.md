@@ -59,5 +59,21 @@
     "doNotSay": "Do not say",
     "makePublic": "Make public (forkable)",
     "errorGeneric": "Something went wrong. Try again."
+  },
+  "sync": {
+    "title": "Sync sources",
+    "stubNote": "Adapters are stubs — they accept handles and finish the job, but do not scrape yet.",
+    "blog": "Blog URL",
+    "x": "X handle",
+    "threads": "Threads handle",
+    "enqueue": "Start sync",
+    "enqueueing": "Syncing…",
+    "needHandle": "Enter at least one source handle.",
+    "status": "Status",
+    "status_queued": "queued",
+    "status_running": "running",
+    "status_done": "done",
+    "status_failed": "failed",
+    "errorGeneric": "Something went wrong. Try again."
   }
 }

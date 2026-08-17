@@ -304,6 +304,25 @@ a:hover {
   max-width: 480px;
 }
 
+.sync-panel {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px dashed var(--faint);
+  max-width: 480px;
+}
+
+.sync-status {
+  margin-top: 20px;
+}
+
+.sync-results {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .nav-text-btn {
   background: none;
   border: none;

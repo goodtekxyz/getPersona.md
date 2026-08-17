@@ -49,6 +49,7 @@ WriteJob { persona_id, kind, channel, language, source, constraints }
 | Product       | `docs/project/02-product.md`                          |
 | Agent API     | `docs/project/04-api.md`                              |
 | Write         | `POST /v1/write` (`apps/api/src/write`)               |
+| Sync          | `POST /v1/sync` + `GET /v1/sync/:jobId` (BullMQ/stub) |
 | MCP           | `POST /mcp` (`apps/api/src/mcp`) — same Nest services |
 | TASK          | `docs/tasks/`                                         |
 | Application   | `apps/web`, `apps/api`, `packages/shared`             |

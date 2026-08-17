@@ -70,3 +70,21 @@ export type {
 export { apiKeyScopeSchema, apiKeyScopesSchema, createApiKeySchema } from './api-key';
 
 export type { ApiKeyScope, CreateApiKeyInput } from './api-key';
+
+export {
+  syncJobStatusSchema,
+  syncSourceKindSchema,
+  syncSourceHandlesSchema,
+  enqueueSyncSchema,
+  syncAdapterResultSchema,
+  syncJobSchema,
+} from './sync';
+
+export type {
+  SyncJobStatus,
+  SyncSourceKind,
+  SyncSourceHandles,
+  EnqueueSyncInput,
+  SyncAdapterResult,
+  SyncJob,
+} from './sync';
