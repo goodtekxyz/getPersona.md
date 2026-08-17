@@ -45,7 +45,7 @@ async function bootstrap() {
   const swaggerConfig = new DocumentBuilder()
     .setTitle('getPersona.md API')
     .setDescription(
-      'Connect surface (`api.getpersona.md`). Auth: Bearer API key (hashed at rest) or session cookie. Scopes: write | promote (D-007).',
+      'Connect surface (`api.getpersona.md`). Auth: Bearer API key (hashed at rest) or session cookie. Scopes: write | promote (D-007). MCP Streamable HTTP at POST /mcp (Bearer API key).',
     )
     .setVersion('1')
     .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'API Key' }, 'bearer')

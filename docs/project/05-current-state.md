@@ -4,8 +4,8 @@
 
 ## Stage
 
-- TASK-001–008 shipped (or present on develop) for M0–M4.
-- TASK-009 (M5 Connect) **In Progress** on `task/009-m5-connect-v1-api-keys-hash-swagger-rate-limit-redis`.
+- TASK-001–009 shipped (or present on develop) for M0–M5.
+- TASK-010 (M6 MCP) **In Progress** on `task/010-m6-mcp-server-on-apps-api-same-core`.
 
 ## Product / stack
 
@@ -13,7 +13,7 @@ Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](1
 
 ## Active TASK
 
-- `TASK-009` · M5 · In Progress
+- `TASK-010` · M6 · In Progress
 
 ## Built
 
@@ -32,11 +32,12 @@ Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](1
 | Promote    | API key `promote` scope or session operator; write-only key → 403; identity/voice/boundary need `confirmGate` |
 | Write      | `POST /v1/write` project→draft→judge→text\|skip; llm_wrapper or stub; `write_runs` trace; physical laws       |
 | API keys   | `/v1/api-keys` create (plaintext once) / list / revoke; sha256 hash only; scopes write\|promote               |
-| Rate limit | Redis fixed window via ioredis (memory fallback); per account + per key                                       |
+| Rate limit | Redis fixed window via ioredis (memory fallback); per account + per key (`/v1` and `/mcp`)                    |
 | Swagger    | `@nestjs/swagger` UI at `/docs`                                                                               |
 | Public     | `GET /v1/personas/:id` allowlisted; body only when `isPublic`                                                 |
+| MCP        | `POST /mcp` Streamable HTTP (stateless); Bearer API key; tools list/get/write/remember → Nest services        |
 | CI         | `docs/ci/github-actions-ci.yml` (self-hosted skeleton)                                                        |
 
 ## Next step
 
-Ship TASK-009 → M6 MCP.
+Ship TASK-010 → M7 Sync job boundary.

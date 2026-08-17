@@ -43,14 +43,15 @@ WriteJob { persona_id, kind, channel, language, source, constraints }
 
 ## Key paths (today)
 
-| Area          | Path                                      |
-| ------------- | ----------------------------------------- |
-| Stack / hosts | `docs/project/09-stack.md`                |
-| Product       | `docs/project/02-product.md`              |
-| Agent API     | `docs/project/04-api.md`                  |
-| Write         | `POST /v1/write` (`apps/api/src/write`)   |
-| TASK          | `docs/tasks/`                             |
-| Application   | `apps/web`, `apps/api`, `packages/shared` |
+| Area          | Path                                                  |
+| ------------- | ----------------------------------------------------- |
+| Stack / hosts | `docs/project/09-stack.md`                            |
+| Product       | `docs/project/02-product.md`                          |
+| Agent API     | `docs/project/04-api.md`                              |
+| Write         | `POST /v1/write` (`apps/api/src/write`)               |
+| MCP           | `POST /mcp` (`apps/api/src/mcp`) — same Nest services |
+| TASK          | `docs/tasks/`                                         |
+| Application   | `apps/web`, `apps/api`, `packages/shared`             |
 
 ## Process (VibeOps)
 

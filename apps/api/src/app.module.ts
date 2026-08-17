@@ -18,6 +18,7 @@ import { ApiKeysModule } from './api-keys/api-keys.module.js';
 import { ApiKeyEntity } from './api-keys/api-key.entity.js';
 import { RateLimitModule } from './rate-limit/rate-limit.module.js';
 import { ActorRateLimitMiddleware } from './rate-limit/actor-rate-limit.middleware.js';
+import { McpModule } from './mcp/mcp.module.js';
 import { auth } from './auth/auth.js';
 
 const synchronize =
@@ -56,6 +57,7 @@ const synchronize =
     PersonasModule,
     GrowthModule,
     WriteModule,
+    McpModule,
   ],
   controllers: [HealthController, MeController],
 })
