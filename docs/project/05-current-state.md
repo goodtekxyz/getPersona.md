@@ -1,38 +1,30 @@
 # Current state
 
-> Facts only. Updated by `vibeops task ship` / humans after merge (not by `task sync`).
+> Facts only.
 
 ## Stage
 
-- TASK-001·002 **Shipped** and merged to `develop`.
-- TASK-003 (전체 개발계획) **In Progress** on `task/003-task`.
-- 애플리케이션 코드 없음.
+- TASK-001–003 **Shipped**.
+- TASK-004 (M0 design lock + scaffold) **In Progress**.
+- Monorepo scaffold present: `apps/web`, `apps/api`, `packages/shared`.
 
 ## Product / stack
 
-잠금 문서: `01`–`09`. 구현 순서: [10-dev-plan.md](10-dev-plan.md) (M0–M8).
-
-## VibeOps
-
-| Item | Value |
-|------|-------|
-| CLI | `vibeops` 2.5.2 |
-| Integration | `develop` |
-| Production | `main` |
-| Lifecycle | add → ship → merge → sync → release |
+Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](10-dev-plan.md).
 
 ## Active TASK
 
-- `TASK-003` · 개발계획 · In Progress
+- `TASK-004` · M0 · In Progress
 
 ## Built
 
-| Area | State |
-|------|-------|
-| Docs | `01`–`10` |
-| Application | 없음 |
+| Area     | State                                                  |
+| -------- | ------------------------------------------------------ |
+| UI SoR   | DESIGN / LAYOUT / UX locked (getdesign.app bench)      |
+| Monorepo | pnpm 11 + turbo; Next 16.3; Nest 11.2                  |
+| Compose  | Postgres 17 + Redis (`compose.yaml`)                   |
+| CI       | `docs/ci/github-actions-ci.yml` (self-hosted skeleton) |
 
 ## Next step
 
-TASK-003 ship → merge → sync 후, M0용 `vibeops task add`  
-(**getDesign.md 확인 → DESIGN/LAYOUT/UX 잠금 + 모노레포 스캐폴드**).
+Ship TASK-004 → M1 Better Auth.
