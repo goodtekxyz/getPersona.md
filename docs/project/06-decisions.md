@@ -55,3 +55,33 @@
 - **Date:** 2026-08-17
 - **Decision:** 언어, DB, HTTP 프레임워크, personaAgent 재사용 여부는 이 TASK에서 잠그지 않는다.
 - **Why:** 기획이 잠글 것은 제품이다. 배선은 설계 TASK의 결정이다.
+
+## D-010 · Full product surface in this repo
+
+- **Date:** 2026-08-17
+- **Decision:** getPersona.md는 웹(랜딩·가입·로그인·등록·싱크·포크)과 agent·API/MCP를 모두 이 레포에서 구현한다. getDesign.md는 디자인·UX 벤치마크만.
+- **Why:** 제품과 벤치마크를 분리하고, 구현 단일 레포를 유지한다.
+
+## D-011 · Hosts and one API process
+
+- **Date:** 2026-08-17
+- **Decision:** `getpersona.md`(web), `agent.getpersona.md`(에이전트 표면), `api.getpersona.md`(REST/MCP). agent와 api는 같은 Nest 프로세스. 쿠키는 `.getpersona.md`.
+- **Why:** 공개 네임스페이스는 나누고, 내부 HTTP 홉은 피한다.
+
+## D-012 · Stack versions (TASK-002)
+
+- **Date:** 2026-08-17
+- **Decision:** Node 24 LTS, pnpm 11.22, TS 5.9, Next 16.3, React 19.2, NestJS 11.2 (Express), Postgres 17, TypeORM, Better Auth 1.6, BullMQ+Redis, Zod+class-validator, MCP SDK in api, Pino, Infisical, Podman Compose, GH Actions self-hosted, S3 at s3.goodtek.xyz, llm_wrapper only. 상세는 `09-stack.md`.
+- **Why:** LTS·서로 호환되는 최신 안정 조합. Nest 정공법(TypeORM/Express/Swagger).
+
+## D-013 · personaAgent absorption
+
+- **Date:** 2026-08-17
+- **Decision:** personaAgent의 post/comment/reply를 getPersona.md agent로 **각각 에이전트**로 흡수한다. 코드 이전은 구현 TASK.
+- **Why:** 쓰기 품질 엔진을 제품 agent 면으로 옮긴다. D-009의 미결을 닫는다.
+
+## D-014 · Access model
+
+- **Date:** 2026-08-17
+- **Decision:** 작업은 계정 소속 페르소나만. API 키는 해시 저장. 퍼블릭은 명시한 페르소나·엔드포인트만.
+- **Why:** 기본 비공개. 키 원문 재노출을 막는다.
