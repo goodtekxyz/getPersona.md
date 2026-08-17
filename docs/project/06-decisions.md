@@ -97,3 +97,9 @@
 - **Date:** 2026-08-17
 - **Decision:** API keys store sha256 only; plaintext returned once. Auth is Bearer key or session. Key scopes are `write` and/or `promote` (D-007); session operators have both. Env `PROMOTE_CREDENTIAL` retired. Rate limit via Redis (ioredis) fixed window per account and key. OpenAPI at `/docs`. Public reads require both route allowlist and `persona.isPublic`.
 - **Why:** Connect surface for `api.getpersona.md` without re-exposing secrets or letting write automation promote LTM.
+
+## D-017 · MCP on same Nest core (M6)
+
+- **Date:** 2026-08-17
+- **Decision:** MCP runs in `apps/api` via `@modelcontextprotocol/sdk` Streamable HTTP at `POST /mcp` (stateless, JSON responses). Auth is Bearer API key only (write scope). Tools (`list_personas`, `get_persona`, `write`, `remember`) call the same Nest services as REST `/v1`. Rate limit covers `/mcp`.
+- **Why:** One core for connect surfaces; MCP clients use keys, not cookies.

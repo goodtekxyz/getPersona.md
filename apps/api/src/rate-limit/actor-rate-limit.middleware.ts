@@ -15,7 +15,8 @@ export class ActorRateLimitMiddleware implements NestMiddleware {
   ) {}
 
   async use(req: Request, res: Response, next: NextFunction) {
-    if (!req.path?.startsWith('/v1')) {
+    const path = req.path ?? '';
+    if (!path.startsWith('/v1') && !path.startsWith('/mcp')) {
       next();
       return;
     }

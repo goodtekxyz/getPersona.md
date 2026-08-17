@@ -4,7 +4,7 @@
 
 ## Surface
 
-MVP 표면은 **HTTP JSON API** 하나다. CLI와 MCP는 같은 코어를 나중에 얹는다. 표면마다 retrieve나 승격을 다시 구현하지 않는다.
+MVP 연결은 **HTTP JSON REST `/v1`** 와 **MCP Streamable HTTP (`POST /mcp`)** 다. 둘 다 같은 Nest 서비스(코어)를 호출한다. 표면마다 retrieve나 승격을 다시 구현하지 않는다.
 
 인증은 최소 두 토큰이다.
 
@@ -63,6 +63,53 @@ MVP 표면은 **HTTP JSON API** 하나다. CLI와 MCP는 같은 코어를 나중
 
 `Write`는 동기여도 된다. 모델 루프라 수십 초가 걸릴 수 있다. 클라이언트 타임아웃을 전제로 한다. 비동기 잡은 후속.
 
+## MCP (Streamable HTTP)
+
+| Item      | Value                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------ |
+| Endpoint  | `POST /mcp` on `api.getpersona.md` (same Nest process as `/v1`)                                  |
+| Transport | MCP Streamable HTTP, **stateless** (`sessionId` 없음), JSON responses                            |
+| Auth      | **Bearer API key only** (`Authorization: Bearer gp_live_…`). Session cookie는 MCP에 쓰지 않는다. |
+| Scopes    | Tools need **write** (same as REST). Promote stays on REST `/v1/growth/promote`.                 |
+| Tools     | `list_personas`, `get_persona`, `write`, `remember` → same Nest services as `/v1`                |
+
+### Connect (Cursor / clients)
+
+1. Create a key: `POST /v1/api-keys` with session (scopes include `write`). Copy plaintext once.
+2. Point the MCP client at the API origin + `/mcp` with the Bearer header.
+
+Example Cursor `mcp.json` (HTTP / remote URL style; field names vary by client):
+
+```json
+{
+  "mcpServers": {
+    "getpersona": {
+      "url": "https://api.getpersona.md/mcp",
+      "headers": {
+        "Authorization": "Bearer gp_live_REPLACE_ME"
+      }
+    }
+  }
+}
+```
+
+Local:
+
+```json
+{
+  "mcpServers": {
+    "getpersona": {
+      "url": "http://localhost:3001/mcp",
+      "headers": {
+        "Authorization": "Bearer gp_live_REPLACE_ME"
+      }
+    }
+  }
+}
+```
+
+`GET` / `DELETE` `/mcp` return 405 in stateless mode. Rate limits apply to `/mcp` like `/v1` (per key + account).
+
 ## Health
 
 `Health` — 프로세스 생존. 페르소나·모델 준비와 섞지 않는다.
@@ -72,4 +119,4 @@ MVP 표면은 **HTTP JSON API** 하나다. CLI와 MCP는 같은 코어를 나중
 - 페르소나 전체나 memory dump를 응답하지 않는다.
 - 내부 용어(`getPersona`, 카드 테이블명, compile 단계명)가 공개 문장에 나오면 실패다.
 - 버전·감사 로그는 MVP 밖. 레이트 리밋은 M5에서 Redis 고정 창(키·계정). 신뢰 네트워크 API로 취급한다.
-- 스키마는 한 코어에서 나온다. HTTP가 다른 승격 규칙을 갖지 않는다.
+- 스키마는 한 코어에서 나온다. HTTP·MCP가 다른 승격 규칙을 갖지 않는다.
