@@ -4,8 +4,8 @@
 
 ## Stage
 
-- TASK-001–006 shipped (or present on develop) for M0–M2.
-- TASK-007 (M3 Growth) **In Progress** on `task/007-m3-growth-remember-promote-project-promote-gate`.
+- TASK-001–007 shipped (or present on develop) for M0–M3.
+- TASK-008 (M4 Write agents) **In Progress** on `task/008-m4-write-agents-post-comment-reply-text-skip-via-llm-wrapper`.
 
 ## Product / stack
 
@@ -13,7 +13,7 @@ Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](1
 
 ## Active TASK
 
-- `TASK-007` · M3 · In Progress
+- `TASK-008` · M4 · In Progress
 
 ## Built
 
@@ -30,8 +30,9 @@ Docs `01`–`10` + `DESIGN.md` / `LAYOUT.md` / `UX.md`. Plan: [10-dev-plan.md](1
 | Web SoR UI | Auth-gated `/personas`, `/personas/new`, `/personas/[id]`                                                                   |
 | Growth     | `/v1/growth` remember (idempotent) / promote (credential+gate) / project; episodes, candidates, ltm_memories, growth_audits |
 | Promote    | Header `X-Promote-Credential` ≠ write session; identity/voice/boundary need `confirmGate`                                   |
+| Write      | `POST /v1/write` project→draft→judge→text\|skip; llm_wrapper or stub; `write_runs` trace; physical laws                     |
 | CI         | `docs/ci/github-actions-ci.yml` (self-hosted skeleton)                                                                      |
 
 ## Next step
 
-Ship TASK-007 → M4 agents (write path).
+Ship TASK-008 → M5 `/v1` keys + Swagger.
