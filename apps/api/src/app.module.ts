@@ -7,6 +7,11 @@ import { HelmetMiddleware } from './helmet.middleware.js';
 import { MeController } from './me/me.controller.js';
 import { PersonasModule } from './personas/personas.module.js';
 import { PersonaEntity } from './personas/persona.entity.js';
+import { GrowthModule } from './growth/growth.module.js';
+import { EpisodeEntity } from './growth/episode.entity.js';
+import { CandidateEntity } from './growth/candidate.entity.js';
+import { LtmMemoryEntity } from './growth/ltm-memory.entity.js';
+import { GrowthAuditEntity } from './growth/growth-audit.entity.js';
 import { auth } from './auth/auth.js';
 
 const synchronize =
@@ -23,7 +28,7 @@ const synchronize =
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
-      entities: [PersonaEntity],
+      entities: [PersonaEntity, EpisodeEntity, CandidateEntity, LtmMemoryEntity, GrowthAuditEntity],
       synchronize,
       logging: process.env.TYPEORM_LOGGING === 'true',
     }),
@@ -33,6 +38,7 @@ const synchronize =
       disableGlobalAuthGuard: true,
     }),
     PersonasModule,
+    GrowthModule,
   ],
   controllers: [HealthController, MeController],
 })

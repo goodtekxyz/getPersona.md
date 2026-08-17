@@ -27,3 +27,23 @@ export type {
   PatchPersonaInput,
   Persona,
 } from './persona';
+
+export {
+  memoryKindSchema,
+  writeKindSchema,
+  candidateStatusSchema,
+  rememberSchema,
+  promoteSchema,
+  projectSchema,
+  CONTRACT_MEMORY_KINDS,
+  requiresPromoteGate,
+} from './growth';
+
+export type {
+  MemoryKind,
+  WriteKind,
+  CandidateStatus,
+  RememberInput,
+  PromoteInput,
+  ProjectInput,
+} from './growth';
