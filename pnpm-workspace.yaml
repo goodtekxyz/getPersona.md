@@ -4,6 +4,7 @@ packages:
 allowBuilds:
   '@parcel/watcher': false
   '@prisma/client': false
+  '@scarf/scarf': true
   '@swc/core': false
   better-sqlite3: false
   esbuild: true

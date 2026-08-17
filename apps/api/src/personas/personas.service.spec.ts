@@ -75,9 +75,22 @@ describe('PersonasService', () => {
     await expect(service.getForViewer(created.id, 'user-b')).rejects.toBeInstanceOf(
       ForbiddenException,
     );
+    await expect(service.getPublic(created.id)).rejects.toBeInstanceOf(ForbiddenException);
     await expect(service.patch(created.id, 'user-b', { displayName: 'x' })).rejects.toBeInstanceOf(
       ForbiddenException,
     );
+  });
+
+  it('getPublic allows isPublic personas only', async () => {
+    const pub = await service.create('user-a', {
+      displayName: 'Public',
+      isPublic: true,
+      identity: { who: 'a', intent: 'b', language: 'en' },
+      voice: { typing: 't', stance: 's', sampleSentences: [] },
+    });
+    const viewed = await service.getPublic(pub.id);
+    expect(viewed.id).toBe(pub.id);
+    expect(viewed.isPublic).toBe(true);
   });
 
   it('forks public persona only', async () => {

@@ -1,28 +1,37 @@
 import { Controller, Get, NotFoundException, Param, Post, Body, Req } from '@nestjs/common';
+import { ApiBearerAuth, ApiCookieAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { Request } from 'express';
-import { requireUser } from '../auth/require-user.js';
+import { AuthActorService } from '../auth/auth-actor.service.js';
 import { WriteDto } from './dto/write.dto.js';
 import { WriteService } from './write.service.js';
 
+@ApiTags('write')
+@ApiBearerAuth('bearer')
+@ApiCookieAuth('session')
 @Controller('v1/write')
 export class WriteController {
-  constructor(private readonly writeService: WriteService) {}
+  constructor(
+    private readonly writeService: WriteService,
+    private readonly authActor: AuthActorService,
+  ) {}
 
   /**
    * WriteJob: project → draft → judge → text|skip.
-   * Session ownership required; LLM via llm_wrapper (or stub).
+   * Bearer write-scoped key or session; LLM via llm_wrapper (or stub).
    */
   @Post()
+  @ApiOperation({ summary: 'Write as persona (text|skip)' })
   async write(@Req() req: Request, @Body() body: WriteDto) {
-    const user = await requireUser(req);
-    return this.writeService.write(user.id, body);
+    const actor = await this.authActor.requireWithScope(req, 'write');
+    return this.writeService.write(actor.userId, body);
   }
 
   /** Debug/audit: run trace for the actor (memory ids + judgment, not memory dump). */
   @Get('runs/:runId')
+  @ApiOperation({ summary: 'Get write run trace' })
   async getRun(@Req() req: Request, @Param('runId') runId: string) {
-    const user = await requireUser(req);
-    const run = await this.writeService.getRun(user.id, runId);
+    const actor = await this.authActor.requireWithScope(req, 'write');
+    const run = await this.writeService.getRun(actor.userId, runId);
     if (!run) {
       throw new NotFoundException('Run not found.');
     }

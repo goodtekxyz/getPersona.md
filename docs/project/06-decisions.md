@@ -91,3 +91,9 @@
 - **Date:** 2026-08-17
 - **Decision:** Better Auth 1.6 runs in `apps/api` (`/api/auth/*`, pg Pool). Web uses `better-auth/react` against `NEXT_PUBLIC_API_URL`. Local cookies are host-only; production sets `AUTH_COOKIE_DOMAIN=.getpersona.md`. SMTP/OAuth are env stubs; `REQUIRE_EMAIL_VERIFICATION` stays false until SMTP is real. `apps/api` is ESM (`"type": "module"`) so Better Auth loads cleanly.
 - **Why:** Architecture places Auth on the Nest process; shared cookie domain needs the API to mint the session for `/v1/me`.
+
+## D-016 · Connect keys + scopes (M5)
+
+- **Date:** 2026-08-17
+- **Decision:** API keys store sha256 only; plaintext returned once. Auth is Bearer key or session. Key scopes are `write` and/or `promote` (D-007); session operators have both. Env `PROMOTE_CREDENTIAL` retired. Rate limit via Redis (ioredis) fixed window per account and key. OpenAPI at `/docs`. Public reads require both route allowlist and `persona.isPublic`.
+- **Why:** Connect surface for `api.getpersona.md` without re-exposing secrets or letting write automation promote LTM.

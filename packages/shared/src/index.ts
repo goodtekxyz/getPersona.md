@@ -66,3 +66,7 @@ export type {
   WriteStatus,
   WriteResult,
 } from './write';
+
+export { apiKeyScopeSchema, apiKeyScopesSchema, createApiKeySchema } from './api-key';
+
+export type { ApiKeyScope, CreateApiKeyInput } from './api-key';

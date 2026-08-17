@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ApiKeysModule } from '../api-keys/api-keys.module.js';
 import { PersonasModule } from '../personas/personas.module.js';
 import { CandidateEntity } from './candidate.entity.js';
 import { EpisodeEntity } from './episode.entity.js';
@@ -10,6 +11,7 @@ import { LtmMemoryEntity } from './ltm-memory.entity.js';
 
 @Module({
   imports: [
+    ApiKeysModule,
     PersonasModule,
     TypeOrmModule.forFeature([EpisodeEntity, CandidateEntity, LtmMemoryEntity, GrowthAuditEntity]),
   ],
