@@ -35,7 +35,10 @@ API keys (hash-only), Swagger, Redis rate limit, Bearer or session auth for conn
 
 ## Git Context
 
+- Base Branch: `develop`
+- Base Commit: `2968087`
 - Task Branch: `task/009-m5-connect-v1-api-keys-hash-swagger-rate-limit-redis`
+- Started At: `2026-08-17T03:12:24.000Z`
 
 ## Result
 
