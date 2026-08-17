@@ -1,31 +1,30 @@
 # Roadmap
 
-> TASK-001이 잠근 후속 분해. 번호는 구현 순서가 아니라 기획 단위다. 실제 TASK id는 `vibeops task add`가 붙인다.
+> 번호는 구현 순서가 아니다. 실제 TASK id는 `vibeops task add`가 붙인다.
 
-## After this TASK
+## Done / in flight
 
-기획은 여기까지다. 다음 설계 TASK가 스택과 모듈 경계를 잠근다.
+| Slice | Status |
+|-------|--------|
+| 기획 · 제품·성장·Agent API | TASK-001 Shipped |
+| 설계 · 스택·호스트·제품 표면 | TASK-002 In Progress |
 
-## Suggested slices
+## Suggested next slices
 
 | Slice | Locks | Not in this slice |
 |-------|-------|-------------------|
-| 설계 · 스택과 SoR | 언어, 런타임, DB, 모델 게이트웨이, 레포 모듈 경계. personaAgent 재사용 여부 | 테이블 DDL 구현 |
-| 설계 · 계약 스키마 | identity / voice / boundary / permission 필드, WriteJob subjects | HTTP 서버 |
-| 구현 · 페르소나 등록·관리 | Create / List / Get / Patch / Archive, 인증 | 쓰기 에이전트 |
-| 구현 · 성장 | Remember / Promote / Project, 인덱스 | 오케스트레이션 |
-| 구현 · Write Agent | post / comment / reply → text \| skip, 물리 법칙, trace | 게시 |
-| 구현 · HTTP 표면 | 위 능력을 한 API로 노출, write/promote 토큰 | CLI / MCP |
-| 품질 | 종류별 골드(정답 문장 없음), 누수·언어·길이 검사 | 라이브 소셜 |
-| 표면 확장 | CLI, MCP. 같은 코어 | 새 정책 |
+| 구현 · 모노레포 스캐폴드 | pnpm/turbo, apps/web+api, compose, CI skeleton | 비즈니스 로직 |
+| 구현 · 계정 (Better Auth) | 가입·로그인·쿠키 `.getpersona.md` | 페르소나 싱크 |
+| 구현 · 페르소나 등록·관리 | CRUD/archive, 소속 검사 | 쓰기 에이전트 |
+| 구현 · 성장 | remember/promote/project | 오케스트레이션 |
+| 구현 · Agent 흡수 | post/comment/reply from personaAgent | 게시 어댑터 |
+| 구현 · HTTP `/v1` + 키 + Swagger | 연결 면 | MCP |
+| 구현 · MCP | SDK on same api | 새 정책 |
+| 구현 · 싱크 잡 + 어댑터 경계 | BullMQ job shape | 실제 X/Threads 스크레이프 |
+| 품질 | 종류별 골드, 누수·길이 | 라이브 소셜 |
+| 후속 | admin 호스트, 결제, OTel, getDesign 시각 정렬 | — |
 
 ## Order hint
 
-등록·관리가 쓰기보다 먼저다. `persona_id` 없이 WriteJob을 열지 않는다. 성장 파이프(`remember` → 후보 → `promote`)가 없는 쓰기는 학습하지 않는 래퍼이므로, Write와 같은 마일스톤에 넣거나 바로 앞에 둔다.
-
-## Unlocked
-
-- TypeScript / Postgres / Hono 등 구체 스택
-- personaAgent 코드 재사용 vs 신규 코어
-- 배포, CI, 관리 UI
-- 비동기 Write, 레이트 리밋, 감사 로그
+스캐폴드 → 계정 → 페르소나 SoR → 성장 → agent → `/v1` → MCP.  
+싱크 어댑터는 SoR·큐 이후. `persona_id` 없이 WriteJob을 열지 않는다.
