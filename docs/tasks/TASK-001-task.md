@@ -67,6 +67,7 @@ In Progress
 - `docs/project/08-roadmap.md`
 - `docs/tasks/TASK-001-task.md`
 - `docs/logs/2026-08-17.md`
+- `AGENTS.md` — VibeOps만으로 add/ship/merge/sync/release, 단계 스킵·대체 반영 금지
 
 잠근 한 줄: 페르소나가 원본이다. 글은 투영이다. API는 문장 또는 skip을 돌려준다. 게시는 본체가 아니다.
 
@@ -81,3 +82,5 @@ In Progress
 - 성장 게이트가 `07`과 D-005에 있다.
 - 로드맵이 `08`에 있다. 스택·재사용은 D-009로 열어 두었다.
 - D-001과 VibeOps current-state가 유지된다.
+- `AGENTS.md`에 Repo management hard rules(단계 준수·vibeops 전용)가 있다.
+- `vibeops status`가 TASK-001 In Progress / `task/001-task`를 가리킨다 (ship 직전).
