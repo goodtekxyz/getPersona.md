@@ -15,6 +15,7 @@
 | [09-stack.md](09-stack.md)                     | 스택·호스트·버전 (TASK-002)          |
 | [10-dev-plan.md](10-dev-plan.md)               | 전체 구현 마일스톤 (TASK-003)        |
 | [11-ops-backup.md](11-ops-backup.md)           | Postgres dump / restore note (M8)    |
+| [12-self-host-smoke.md](12-self-host-smoke.md) | Local smoke + release prep (P1)      |
 | [DESIGN.md](DESIGN.md)                         | 디자인 요소 (M0a, getDesign.md 벤치) |
 | [LAYOUT.md](LAYOUT.md)                         | 레이아웃 (M0a)                       |
 | [UX.md](UX.md)                                 | UX 규칙 (M0a)                        |
