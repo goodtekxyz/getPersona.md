@@ -103,3 +103,9 @@
 - **Date:** 2026-08-17
 - **Decision:** MCP runs in `apps/api` via `@modelcontextprotocol/sdk` Streamable HTTP at `POST /mcp` (stateless, JSON responses). Auth is Bearer API key only (write scope). Tools (`list_personas`, `get_persona`, `write`, `remember`) call the same Nest services as REST `/v1`. Rate limit covers `/mcp`.
 - **Why:** One core for connect surfaces; MCP clients use keys, not cookies.
+
+## D-010 · Governance: VibeOps + 정공법
+
+- **Date:** 2026-08-23
+- **Decision:** 모든 작업은 VibeOps `task add` / `ship` / `merge` / `sync`(/`release`)로 Git에 남기고, 아키텍처·상태·결정은 `docs/project/`와 TASK가 원본이다. 의사결정이 필요하면 임시 금지·하드코딩·강제 룰베이스 대신 TASK + `06-decisions` append(정공법)로 진행한다.
+- **Why:** 채팅·암묵 규칙·엔진 분기보다 기록된 슬라이스와 결정 로그가 유지보수에 낫다. Cursor always-apply: `.cursor/rules/00-governance.mdc`.
