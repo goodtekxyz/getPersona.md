@@ -1,0 +1,38 @@
+---
+description: VibeOps로 Git·아키텍처를 기록하고, 의사결정은 정공법(TASK·문서)으로만 한다
+alwaysApply: true
+---
+
+# 프로젝트 거버넌스
+
+## Git과 프로젝트 기억
+
+모든 프로젝트 작업은 **VibeOps TASK 사이클**로 Git에 남기면서 아키텍처·상태·결정을 관리한다.
+
+1. `vibeops task add` — 범위·브랜치 시작
+2. plan / build — `docs/tasks/TASK-NNN-*.md`와 `docs/project/` 기준
+3. `vibeops task ship` — PR로 반영 제출
+4. `vibeops task merge` — integration(`develop`)에 합침
+5. `vibeops task sync` — (선택) 브랜치 정리
+6. `vibeops task release` — (선택) production(`main`)
+
+아키텍처·현재 상태·결정의 원본은 `docs/project/`(특히 `03-architecture`, `05-current-state`, `06-decisions`)와 TASK 파일이다. 채팅만으로 잠그지 않는다.
+
+## 의사결정이 필요할 때 — 정공법
+
+판단이 갈리면 **임시 금지·하드코딩·강제 룰**로 막지 않고, 아래 순서로 진행한다.
+
+1. `vibeops task add`로 슬라이스를 자른다.
+2. TASK에 Goal / Scope / AC / Test Plan을 쓴다.
+3. 구조·선택이 바뀌면 `docs/project/06-decisions.md`에 **append-only**로 남긴다.
+4. 구현 후 `task ship` → (사람 요청 시) `merge` / `sync`.
+
+정책은 **페르소나·계약·문서**에 두고, 엔진·에이전트에 계정별 분기나 케이스 표를 넣지 않는다.
+
+## 하지 않는 것
+
+- VibeOps 단계 없이 `develop` / `main`에 직접 반영
+- 의사결정을 **코드 하드코딩**, **무조건 금지 목록**, **강제 룰베이스**(자동 차단·우회 프롬프트)로 대체
+- TASK·`docs/project` 없이 “암묵적 규칙”만 쌓기
+
+라이프사이클 상세는 `AGENTS.md`, 결정 로그는 `docs/project/06-decisions.md`.
