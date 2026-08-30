@@ -21,13 +21,15 @@
 
 ## Post-MVP
 
-| #   | Slice                         | Status      | TASK     |
-| --- | ----------------------------- | ----------- | -------- |
-| P1  | Ops · smoke + CI + release    | In Progress | TASK-013 |
-| P2  | Prod deploy (compose + Caddy) | Planned     | —        |
-| P3  | Real sync scrapers            | Planned     | —        |
-| P4  | Write quality depth           | Planned     | —        |
+| #   | Slice                           | Status      | TASK     |
+| --- | ------------------------------- | ----------- | -------- |
+| P1  | Ops · smoke + CI + release prep | **Done**    | TASK-013 |
+| —   | Governance · VibeOps + 정공법   | **Done**    | TASK-014 |
+| —   | Docs sync to post-MVP facts     | In Progress | TASK-015 |
+| P2  | Prod deploy (compose + Caddy)   | Planned     | —        |
+| P3  | Real sync scrapers              | Planned     | —        |
+| P4  | Write quality depth             | Planned     | —        |
 
 ## Deferred
 
-admin 호스트 · 결제 · feature flags · OTel
+admin 호스트 · 결제 · feature flags · OTel · `main` release (ops decision)
