@@ -5,15 +5,17 @@
 ## Stage
 
 - **MVP complete** on `develop`: TASK-001–012 **Shipped**, milestones **M0–M8** done.
-- **TASK-013** (P1 ops: smoke + CI + release prep) **In Progress** on `task/013-p1-self-host-smoke-checklist-wire-ci-release-prep`.
+- **P1 complete**: TASK-013 (smoke + CI + release prep) **Shipped**.
+- **Governance**: TASK-014 (`.cursor/rules/00-governance.mdc`, D-010) **Shipped**.
+- **TASK-015**: sync these docs to match vibeops (this TASK).
 
 ## Product / stack
 
-Docs `01`–`12` + `DESIGN.md` / `LAYOUT.md` / `UX.md` + `UI-DRIFT-CHECKLIST.md`. Plan: [10-dev-plan.md](10-dev-plan.md). Ops: [12-self-host-smoke.md](12-self-host-smoke.md).
+Docs `01`–`12` + `DESIGN.md` / `LAYOUT.md` / `UX.md` + `UI-DRIFT-CHECKLIST.md`. Plan: [10-dev-plan.md](10-dev-plan.md). Ops: [12-self-host-smoke.md](12-self-host-smoke.md). Governance: `.cursor/rules/00-governance.mdc`.
 
 ## Active TASK
 
-- `TASK-013` · P1 self-host smoke + CI + release prep · In Progress
+- `TASK-015` · Sync project docs post-MVP · In Progress
 
 ## Built
 
@@ -28,14 +30,29 @@ Docs `01`–`12` + `DESIGN.md` / `LAYOUT.md` / `UX.md` + `UI-DRIFT-CHECKLIST.md`
 | Write       | post / comment / reply → text \| skip; physical laws; gold fixtures             |
 | Connect     | `/v1` + API keys + Swagger + rate limit                                         |
 | MCP         | Streamable HTTP on `/mcp`                                                       |
-| Sync        | BullMQ + stub adapters                                                          |
+| Sync        | BullMQ + stub adapters (blog / X / Threads)                                     |
 | CI          | `.github/workflows/ci.yml` (self-hosted, Node 24)                               |
 | Local smoke | `scripts/smoke-local.sh` + `12-self-host-smoke.md`                              |
+| Governance  | VibeOps lifecycle + 정공법 (`00-governance.mdc`, D-010)                         |
+
+## Connect surface (what this product exposes)
+
+| Target                            | Status                   | Notes                                |
+| --------------------------------- | ------------------------ | ------------------------------------ |
+| Web `getpersona.md`               | Built (local)            | Landing, auth, persona UI            |
+| Agent `agent.getpersona.md`       | Built in-process         | Same Nest as api; post/comment/reply |
+| Connect `api.getpersona.md`       | Built (local)            | REST `/v1` + MCP `/mcp`              |
+| Clients (API key / MCP)           | Built                    | Cursor MCP example in `04-api.md`    |
+| llm_wrapper                       | Wired                    | Only LLM path; stub if URL unset     |
+| Sync sources (blog / X / Threads) | Boundary only            | Stub adapters; no real scrape        |
+| S3 `s3.goodtek.xyz`               | Stub                     | Artifact client stub                 |
+| personaLoop (publish client)      | Adjacent, not built here | May call this API later              |
+| Prod hosts / Caddy                | Not built                | P2                                   |
 
 ## Not built (post-MVP)
 
-Prod compose/deploy · `main` release · real sync scrapers · admin / payments / OTel
+`vibeops task release` to `main` · prod compose/Caddy · real sync scrapers · admin / payments / OTel
 
 ## Next step
 
-Ship TASK-013 → human runs `vibeops task release` when smoke passes on develop → P2 prod deploy.
+Ship TASK-015 → optional `vibeops task release` or P2 prod deploy TASK.
