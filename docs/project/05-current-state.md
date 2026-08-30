@@ -6,8 +6,9 @@
 
 - **MVP complete** on `develop`: TASK-001–012 **Shipped**, milestones **M0–M8** done.
 - **P1 complete**: TASK-013 (smoke + CI + release prep) **Shipped**.
-- **Governance**: TASK-014 (`.cursor/rules/00-governance.mdc`, D-010) **Shipped**.
-- **TASK-015**: sync these docs to match vibeops (this TASK).
+- **Governance**: TASK-014 **Shipped**.
+- **Docs synced**: TASK-015–016 **Shipped** (facts match vibeops).
+- No active TASK.
 
 ## Product / stack
 
@@ -15,7 +16,7 @@ Docs `01`–`12` + `DESIGN.md` / `LAYOUT.md` / `UX.md` + `UI-DRIFT-CHECKLIST.md`
 
 ## Active TASK
 
-- `TASK-015` · Sync project docs post-MVP · In Progress
+(none)
 
 ## Built
 
@@ -55,4 +56,4 @@ Docs `01`–`12` + `DESIGN.md` / `LAYOUT.md` / `UX.md` + `UI-DRIFT-CHECKLIST.md`
 
 ## Next step
 
-Ship TASK-015 → optional `vibeops task release` or P2 prod deploy TASK.
+`vibeops task release` (ops) or `vibeops task add` for P2 prod deploy / P3 real sync.

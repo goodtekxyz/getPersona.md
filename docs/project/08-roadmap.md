@@ -21,14 +21,15 @@
 
 ## Post-MVP
 
-| #   | Slice                           | Status      | TASK     |
-| --- | ------------------------------- | ----------- | -------- |
-| P1  | Ops · smoke + CI + release prep | **Done**    | TASK-013 |
-| —   | Governance · VibeOps + 정공법   | **Done**    | TASK-014 |
-| —   | Docs sync to post-MVP facts     | In Progress | TASK-015 |
-| P2  | Prod deploy (compose + Caddy)   | Planned     | —        |
-| P3  | Real sync scrapers              | Planned     | —        |
-| P4  | Write quality depth             | Planned     | —        |
+| #   | Slice                           | Status   | TASK     |
+| --- | ------------------------------- | -------- | -------- |
+| P1  | Ops · smoke + CI + release prep | **Done** | TASK-013 |
+| —   | Governance · VibeOps + 정공법   | **Done** | TASK-014 |
+| —   | Docs sync to post-MVP facts     | **Done** | TASK-015 |
+| —   | Docs: no active TASK            | **Done** | TASK-016 |
+| P2  | Prod deploy (compose + Caddy)   | Planned  | —        |
+| P3  | Real sync scrapers              | Planned  | —        |
+| P4  | Write quality depth             | Planned  | —        |
 
 ## Deferred
 
