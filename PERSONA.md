@@ -1,7 +1,8 @@
 # PERSONA.md
 
 > **Official public persona contract (v0.1)**  
-> Only **public** data. Private soul never belongs here.
+> Only **public** data. Private soul never belongs here.  
+> Korean explanation: [PERSONA.ko.md](./PERSONA.ko.md) — same schema, not a second format.
 
 ---
 
@@ -52,6 +53,30 @@ Diaries, DMs, medical/financial secrets, trust graphs, LTM dumps — **never** i
 5. **Refusals are hard** — soft preferences go in habits; hard stops go in refusals.
 6. **Additive evolution** — `schemaVersion` bumps; never relocate soul data into the contract.
 7. **One format** — famous showcase and user-published personas use the same schema.
+8. **Interview compiles the file** — humans speak; the agent writes v0.1 JSON; humans confirm or reject lines.
+
+### Spec language vs voice language
+
+- This file is the sole schema (English).
+- `PERSONA.ko.md` is the same spec in Korean for humans. Not a second `schemaVersion`.
+- A persona contract is written in `identity.language` only. Do not ship bilingual samples.
+
+### Authoring (D-021) — interview, not a form
+
+A human does not type `habits`, `samples`, or `priorities` into a form.  
+An interviewer asks; a compiler writes v0.1 JSON; the human only **confirms or rejects** compiled lines.  
+The interview transcript is **not** part of the contract.
+
+Interview language = the conversation language.  
+`identity.language` = the voice’s language. They may differ.
+
+1. **Frame** — What does this voice do in public? Who is speaking? Which language does the voice use?
+2. **Speak** — Three in-character replies, different speech acts (assert / decline / invite, or observe / question / cut). Those replies are sample candidates.
+3. **Conflict** — When two goods collide, which wins? → ordered `priorities`.
+4. **Hard no** — What must this voice never say or claim? → `refusals`.
+5. **Confirm** — Show compiled `persona.json`. Infer `register` / `length` / `person` from the samples. Do not ask the human to fill blanks.
+
+Do not ask “list three habits” or “what is your tone?”. Habits are extracted from how they spoke, then linted with §4.3–4.5.
 
 ### Rejected as required fields
 
@@ -66,6 +91,7 @@ Diaries, DMs, medical/financial secrets, trust graphs, LTM dumps — **never** i
 | **Catchphrase-only samples**           | Model already overfits; voice collapses under pressure |
 | **Per-kind sample maps / Q–A pairs**   | Extra structure; the model follows the form            |
 | **Negative-sample field**              | Model echoes the banned voice; use a habit instead     |
+| **Hand-filled habit / sample forms**   | Humans are bad compilers; interview, then confirm      |
 
 ---
 
@@ -252,12 +278,14 @@ Contract = constitution. Soul = life under it.
 ## 9. Product loop on this format
 
 ```text
-Showcase PERSONA (famous, public)
-  → publish your own PERSONA (same schema, public)
+Interview (speak) → compile v0.1 → human confirms
+  → showcase or publish PERSONA (same schema, public)
   → star · checkout · use (agents read the file)
   → popularity / usage
   → marketplace (license + attribution matter)
 ```
+
+Soul (remember → promote) starts after the contract exists. The interview is not a memory dump.
 
 ---
 
@@ -268,7 +296,7 @@ Showcase PERSONA (famous, public)
 | **PERSONA.md** (this) | Public contract schema & embodiment rules |
 | `DESIGN.md`           | UI                                        |
 | `07-growth.md`        | Private remember → promote                |
-| D-018 / D-019         | Layer split + this file as SoR            |
+| D-018 / D-019 / D-021 | Layer split + this file as SoR + interview |
 
 **getPersona.md owns this format.**  
 Implementations must not invent a second public persona schema without bumping `schemaVersion` here.

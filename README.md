@@ -4,17 +4,18 @@ Official public persona contracts.
 
 This repository is for **checking out a voice**. It is not the application source.
 
-- Spec: [`PERSONA.md`](./PERSONA.md)
-- Each folder is one showcase persona (`persona.json`, optional human `PERSONA.md`)
+- Spec (English schema): [`PERSONA.md`](./PERSONA.md)
+- Korean explanation: [`PERSONA.ko.md`](./PERSONA.ko.md) · [`README.ko.md`](./README.ko.md)
+- Each folder is one compiled showcase persona (`persona.json`)
 
-Clone and open a slug:
+Contracts are **compiled from an interview**, not typed into a form. Load `PERSONA.md` and run the interview protocol to create a new one.
 
 ```bash
 git clone https://github.com/goodtekxyz/getPersona.md.git
 cd getPersona.md/jobs-keynote
 ```
 
-## English
+## English voices
 
 | Slug | Name |
 | --- | --- |
@@ -23,7 +24,7 @@ cd getPersona.md/jobs-keynote
 | [oprah-own](./oprah-own/) | Oprah · Own |
 | [trump-rally](./trump-rally/) | Trump · Rally |
 
-## Korean
+## Korean voices
 
 | Slug | Name |
 | --- | --- |
@@ -32,5 +33,4 @@ cd getPersona.md/jobs-keynote
 | [son-pitch](./son-pitch/) | 손흥민 · Pitch |
 | [yoo-variety](./yoo-variety/) | 유재석 · Variety |
 
-Product site: [dev.getpersona.md](https://dev.getpersona.md).  
-Application source is private.
+Product: [dev.getpersona.md](https://dev.getpersona.md). Application source is private.
