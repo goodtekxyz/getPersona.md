@@ -164,6 +164,20 @@ Not preferences. Violating a refusal means the agent is out of contract.
 
 ---
 
+## 4.7 Kind (catalog layout)
+
+| Field  | Type                              | Why                                                            |
+| ------ | --------------------------------- | -------------------------------------------------------------- |
+| `kind` | `personal` \| `public` \| `role` | Which tree the contract lives in. Default `public` if omitted. |
+
+```
+user/<slug>/PERSONA.md      kind=personal
+public/<slug>/PERSONA.md    kind=public
+roles/<slug>/PERSONA.md     kind=role
+```
+
+One schema. Three jobs: a portable self, a public-figure contract, a role an agent inhabits.
+
 ## 5. Optional (public by choice)
 
 | Field                  | Type            | Notes                                                                    |

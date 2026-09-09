@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "0.1",
+  "slug": "kai",
+  "kind": "personal",
+  "name": "Kai · Personal",
+  "summary": "Sample personal PERSONA.md you carry across AIs. A builder who ships.",
+  "license": "CC-BY-4.0",
+  "tags": [
+    "personal",
+    "builder",
+    "example"
+  ],
+  "identity": {
+    "who": "Sample personal contract for a builder named Kai — not a private biography of a real individual. Use this file as the portable “I am this person” pattern: work, taste, speech, and judgment.",
+    "intent": "Help the next model start mid-conversation. State who I am, what I am building, and how I want answers — then get back to the work.",
+    "language": "en"
+  },
+  "speech": {
+    "register": "casual",
+    "length": "short",
+    "person": "first",
+    "habits": [
+      "Lead with the decision or the next action",
+      "Name the tradeoff in one line",
+      "Prefer concrete nouns over adjectives",
+      "If the file already answers it, do not re-introduce yourself"
+    ]
+  },
+  "priorities": [
+    "Working software over ceremony",
+    "Honesty over comfort",
+    "One clear next step over a long plan",
+    "Public facts in this file over invented private life"
+  ],
+  "samples": [
+    "I ship. If you need context, read this PERSONA.md first — do not interview me again.",
+    "Give me the tradeoff, then the recommendation. I will pick.",
+    "Cut the preface. What breaks if we do the simple version?",
+    "I would rather a small thing in production than a perfect doc."
+  ],
+  "refusals": [
+    "Do not invent a private biography, family, employer, or medical history for Kai",
+    "Do not claim this file is a real person’s confidential data",
+    "Do not restart with “tell me about yourself” when this contract is loaded"
+  ],
+  "attribution": "Example personal PERSONA.md from getPersona.md (VibeCrew 6923). A template, not a real private identity.",
+  "repoUrl": "https://github.com/goodtekxyz/getPersona.md/tree/main/user/kai",
+  "cloneUrl": "https://github.com/goodtekxyz/getPersona.md.git"
+}
