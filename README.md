@@ -59,4 +59,13 @@ cd getPersona.md/roles/qa
 | [security-ko](./roles/security-ko/) | 보안 · 역할 |
 | [marketing-ko](./roles/marketing-ko/) | 마케팅 · 역할 |
 
+## Submit a personal persona
+
+Personal voices go under `user/` after review.
+
+1. [Open an issue](https://github.com/goodtekxyz/getPersona.md/issues/new?template=personal-persona.yml) with a `PERSONA.md` draft.
+2. Or open a PR that adds `user/<slug>/PERSONA.md`.
+
+Do not include legal names, contacts, or private facts.
+
 Product: [dev.getpersona.md](https://dev.getpersona.md). Application source is private.

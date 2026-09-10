@@ -59,6 +59,15 @@ cd getPersona.md/roles/qa-ko
 | [security-ko](./roles/security-ko/) | 보안 · 역할 |
 | [marketing-ko](./roles/marketing-ko/) | 마케팅 · 역할 |
 
+## 개인 페르소나 등록
+
+개인 목소리는 검수 후 `user/` 아래에 올라갑니다.
+
+1. [이슈](https://github.com/goodtekxyz/getPersona.md/issues/new?template=personal-persona.yml)로 `PERSONA.md` 초안을 제출합니다.
+2. 또는 `user/<slug>/PERSONA.md` 를 추가하는 PR을 엽니다.
+
+실명·연락처·비공개 정보는 넣지 마세요.
+
 제품: [dev.getpersona.md](https://dev.getpersona.md). 앱 소스는 비공개.
 
 English: [README.md](./README.md).

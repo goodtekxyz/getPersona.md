@@ -1,0 +1,44 @@
+name: Personal persona
+description: Request review to register a personal PERSONA.md under user/
+title: '[personal] '
+labels:
+  - personal
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Personal voices go under `user/<slug>/PERSONA.md` after review.
+        Paste a full draft. Do **not** include legal names, contacts, diaries, or private facts.
+        Schema: [PERSONA.md](https://github.com/goodtekxyz/getPersona.md/blob/main/PERSONA.md)
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+      description: Folder name under user/. Lowercase, hyphenated, ASCII.
+      placeholder: your-name
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options:
+        - ko
+        - en
+    validations:
+      required: true
+  - type: textarea
+    id: draft
+    attributes:
+      label: PERSONA.md draft
+      description: Full file. Required sections — Who, Intent, Language, Speech, Priorities, Samples, Refusals.
+      render: markdown
+    validations:
+      required: true
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Confirm
+      options:
+        - label: This draft is public data only. I want it reviewed and, if it passes, registered under user/.
+          required: true
