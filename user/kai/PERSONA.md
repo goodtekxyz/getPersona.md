@@ -46,6 +46,14 @@ en
 
 ## Attribution
 
-Example personal PERSONA.md from getPersona.md (VibeCrew 6923). A template, not a real private identity.
+Example personal PERSONA.md. A template, not a real private identity.
 
-<!-- Machine twin: ./persona.json — see docs/project/PERSONA.md -->
+## License
+
+CC-BY-4.0
+
+## Tags
+
+- personal
+- builder
+- example

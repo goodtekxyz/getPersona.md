@@ -48,7 +48,7 @@
 2. **Speak** — 그 입으로 답 세 번. 말 행위를 다르게 (단언 / 거절 / 초대, 또는 관찰 / 질문 / 자르기). 그 답이 샘플 후보.
 3. **Conflict** — 두 가치가 부딪히면 무엇이 이기는가 → `priorities`.
 4. **Hard no** — 절대 하지 않을 말·자처 → `refusals`.
-5. **Confirm** — 컴파일된 `persona.json`만 보여 준다. `register` / `length` / `person`은 샘플에서 추론한다. 빈칸을 채우게 하지 않는다.
+5. **Confirm** — 컴파일된 `PERSONA.md`만 보여 준다. `register` / `length` / `person`은 샘플에서 추론한다. 빈칸을 채우게 하지 않는다.
 
 “습관 세 개 적어 주세요”, “말투가 어때요?”는 묻지 않는다. 습관은 **어떻게 말했는지**에서 뽑고, 아래 규칙으로 린트한다.
 
@@ -97,11 +97,12 @@
 
 ## 공식 예시
 
-영어 목소리 `jobs-keynote`. JSON은 [`PERSONA.md`](./PERSONA.md) §6과 `personas/catalog/jobs-keynote/persona.json`과 같다.
+영어 목소리 `jobs-keynote`. 파일은 [`public/jobs-keynote/PERSONA.md`](./public/jobs-keynote/PERSONA.md)다.
 
 체크아웃:
 
 ```bash
-git clone https://github.com/goodtekxyz/getPersona.md.git
-cd getPersona.md/jobs-keynote
+git clone --filter=blob:none --sparse https://github.com/goodtekxyz/getPersona.md.git
+cd getPersona.md
+git sparse-checkout set public/jobs-keynote
 ```

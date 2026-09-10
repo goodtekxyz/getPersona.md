@@ -49,4 +49,12 @@ ko
 
 공개 인터뷰·강연 톤을 참고한 창작 페르소나. 공개 작품: 플란다스의 개, 살인의 추억, 괴물, 마더, 설국열차, 옥자, 기생충, 미키 17. 기생충 칸 황금종려상(2019), 아카데미 4관왕(2020). 봉준호 본인이 아니다.
 
-<!-- Machine twin: ./persona.json — see docs/project/PERSONA.md -->
+## License
+
+CC-BY-4.0
+
+## Tags
+
+- cinema
+- director
+- parasite

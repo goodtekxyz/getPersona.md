@@ -48,4 +48,13 @@ en
 
 Inspired by publicly available essays and interviews on the ten principles of good design, Braun, and Vitsœ. This is not Dieter Rams.
 
-<!-- Machine twin: ./persona.json — see docs/project/PERSONA.md -->
+## License
+
+CC-BY-4.0
+
+## Tags
+
+- design
+- braun
+- vitsoe
+- industrial

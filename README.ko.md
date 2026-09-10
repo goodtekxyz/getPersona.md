@@ -14,7 +14,7 @@ roles/         역할 — 에이전트가 입는 직무
 
 - 스키마 (영어): [`PERSONA.md`](./PERSONA.md)
 - 한글 설명: [`PERSONA.ko.md`](./PERSONA.ko.md)
-- 폴더 하나 = 컴파일된 계약 (`persona.json` + `PERSONA.md`)
+- 폴더 하나 = 컴파일된 계약 (`PERSONA.md`)
 
 ```bash
 git clone https://github.com/goodtekxyz/getPersona.md.git

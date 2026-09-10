@@ -46,6 +46,14 @@ ko
 
 ## Attribution
 
-getPersona.md 개인 PERSONA.md 예시 (VibeCrew 6923). 템플릿이며 실제 사생활이 아니다.
+개인 PERSONA.md 예시. 템플릿이며 실제 사생활이 아니다.
 
-<!-- Machine twin: ./persona.json — see docs/project/PERSONA.md -->
+## License
+
+CC-BY-4.0
+
+## Tags
+
+- personal
+- builder
+- example

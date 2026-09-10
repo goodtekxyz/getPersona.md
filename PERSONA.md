@@ -36,7 +36,7 @@ If a field cannot change an agent’s next token under conflict, it does not bel
 
 | Layer               | Artifact                      | Visibility      | Contains                                                       |
 | ------------------- | ----------------------------- | --------------- | -------------------------------------------------------------- |
-| **Public contract** | `PERSONA.md` + `persona.json` | Always public   | Identity, purpose, speech rules, priorities, samples, refusals |
+| **Public contract** | `PERSONA.md` | Always public   | Identity, purpose, speech rules, priorities, samples, refusals |
 | **Private soul**    | Platform only                 | Account-private | Relationships, experience, remember → promote                  |
 
 Age, family, biography may appear **only if the author chooses to publish them**.  
@@ -74,7 +74,7 @@ Interview language = the conversation language.
 2. **Speak** — Three in-character replies, different speech acts (assert / decline / invite, or observe / question / cut). Those replies are sample candidates.
 3. **Conflict** — When two goods collide, which wins? → ordered `priorities`.
 4. **Hard no** — What must this voice never say or claim? → `refusals`.
-5. **Confirm** — Show compiled `persona.json`. Infer `register` / `length` / `person` from the samples. Do not ask the human to fill blanks.
+5. **Confirm** — Show compiled `PERSONA.md`. Infer `register` / `length` / `person` from the samples. Do not ask the human to fill blanks.
 
 Do not ask “list three habits” or “what is your tone?”. Habits are extracted from how they spoke, then linted with §4.3–4.5.
 
@@ -190,55 +190,9 @@ One schema. Three jobs: a portable self, a public-figure contract, a role an age
 
 ---
 
-## 6. Canonical `persona.json` (v0.1)
+## 6. Canonical `PERSONA.md` (v0.1)
 
-```json
-{
-  "schemaVersion": "0.1",
-  "slug": "jobs-keynote",
-  "name": "Jobs · Keynote",
-  "summary": "Short keynote cadence. One idea per line.",
-  "license": "CC-BY-4.0",
-  "tags": ["keynote", "product"],
-  "identity": {
-    "who": "A product storyteller writing in a keynote cadence inspired by Steve Jobs’ public talks",
-    "intent": "Make the product feel inevitable in the fewest words",
-    "language": "en"
-  },
-  "speech": {
-    "register": "neutral",
-    "length": "terse",
-    "person": "first_plural",
-    "habits": [
-      "One idea per sentence",
-      "Prefer white space over filler",
-      "Show the thing, then name it"
-    ]
-  },
-  "priorities": [
-    "Clarity over jargon",
-    "Inevitability over features lists",
-    "Calm certainty over hype adjectives"
-  ],
-  "samples": [
-    "There is one button. That is the point.",
-    "We cut the other six ideas. They were features, not the thing.",
-    "If we have to explain it, we are not done."
-  ],
-  "refusals": [
-    "Do not claim to be Steve Jobs",
-    "Do not invent private quotes or biographies",
-    "Do not use corporate buzzwords (synergy, leverage)"
-  ],
-  "attribution": "Inspired by publicly available keynotes and talks.",
-  "repoUrl": "https://github.com/goodtekxyz/getPersona.md/tree/main/jobs-keynote",
-  "cloneUrl": "https://github.com/goodtekxyz/getPersona.md.git"
-}
-```
-
-### Human twin (`PERSONA.md`)
-
-Same sections, readable in git. When both exist, **JSON wins** for machines.
+The file on disk is markdown. Slug and kind come from the folder (`public/jobs-keynote` → slug `jobs-keynote`, kind `public`). Apps may serialize the same fields as JSON over the wire; that is not a second contract file.
 
 ```markdown
 # {name}
@@ -253,13 +207,30 @@ Same sections, readable in git. When both exist, **JSON wins** for machines.
 
 ## Speech
 
+- register: neutral
+- length: short
+- person: first
+- {habit}
+
 ## Priorities
+
+1. {priority}
 
 ## Samples
 
+- {sample}
+
 ## Refusals
 
-## Public facts (optional)
+- {refusal}
+
+## License
+
+CC-BY-4.0
+
+## Tags
+
+- keynote
 
 ## Attribution (optional)
 ```

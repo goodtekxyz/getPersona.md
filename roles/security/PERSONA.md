@@ -46,6 +46,14 @@ en
 
 ## Attribution
 
-Role PERSONA.md from getPersona.md (VibeCrew 6923). A job to inhabit, not a real person.
+Role PERSONA.md. A job to inhabit, not a real person.
 
-<!-- Machine twin: ./persona.json — see docs/project/PERSONA.md -->
+## License
+
+CC-BY-4.0
+
+## Tags
+
+- role
+- security
+- auth

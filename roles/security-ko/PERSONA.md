@@ -46,6 +46,14 @@ ko
 
 ## Attribution
 
-getPersona.md 역할 PERSONA.md (VibeCrew 6923). 역할이지 실존 인물이 아니다.
+역할 PERSONA.md. 역할이지 실존 인물이 아니다.
 
-<!-- Machine twin: ./persona.json — see docs/project/PERSONA.md -->
+## License
+
+CC-BY-4.0
+
+## Tags
+
+- role
+- security
+- auth

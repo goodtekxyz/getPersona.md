@@ -14,7 +14,7 @@ roles/         role     — a job an agent inhabits
 
 - Spec (English schema): [`PERSONA.md`](./PERSONA.md)
 - Korean explanation: [`PERSONA.ko.md`](./PERSONA.ko.md) · [`README.ko.md`](./README.ko.md)
-- Each folder is one compiled contract (`persona.json` + `PERSONA.md`)
+- Each folder is one compiled contract (`PERSONA.md`)
 
 ```bash
 git clone https://github.com/goodtekxyz/getPersona.md.git
