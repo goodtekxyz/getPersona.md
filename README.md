@@ -24,28 +24,28 @@ cat roles/vibe-coding/developer/PERSONA.md
 
 ## Language (D-078)
 
-| Kind | Typical `native` | Typical `speaks` |
-| --- | --- | --- |
-| English public figures | `en` | `en` |
-| Korean-only public figures (e.g. 유재석, 백종원) | `ko` | `ko` |
-| Bilingual public figures (e.g. 손흥민, 봉준호) | `ko` | `ko, en` |
-| Role crews | `en` | `ko, en` |
+| Kind                                             | Typical `native` | Typical `speaks` |
+| ------------------------------------------------ | ---------------- | ---------------- |
+| English public figures                           | `en`             | `en`             |
+| Korean-only public figures (e.g. 유재석, 백종원) | `ko`             | `ko`             |
+| Bilingual public figures (e.g. 손흥민, 봉준호)   | `ko`             | `ko, en`         |
+| Role crews                                       | `en`             | `ko, en`         |
 
 Site locale (`/` vs `/en`) filters by `speaks`. It does not pick a twin file.
 
 ## Public figures
 
-| Slug | Display | native | speaks |
-| --- | --- | --- | --- |
-| [musk-x](./public/musk-x/) | Musk · X | en | en |
-| [trump-rally](./public/trump-rally/) | Trump · Rally | en | en |
-| [jobs-keynote](./public/jobs-keynote/) | Jobs · Keynote | en | en |
-| [oprah-own](./public/oprah-own/) | Oprah · Own | en | en |
-| [dieter-rams](./public/dieter-rams/) | Rams · Less | en | en |
-| [bong-cinema](./public/bong-cinema/) | 봉준호 · Cinema | ko | ko, en |
-| [son-pitch](./public/son-pitch/) | 손흥민 · Pitch | ko | ko, en |
-| [yoo-variety](./public/yoo-variety/) | 유재석 · Variety | ko | ko |
-| [baek-table](./public/baek-table/) | 백종원 · Table | ko | ko |
+| Slug                                   | Display          | native | speaks |
+| -------------------------------------- | ---------------- | ------ | ------ |
+| [musk-x](./public/musk-x/)             | Musk · X         | en     | en     |
+| [trump-rally](./public/trump-rally/)   | Trump · Rally    | en     | en     |
+| [jobs-keynote](./public/jobs-keynote/) | Jobs · Keynote   | en     | en     |
+| [oprah-own](./public/oprah-own/)       | Oprah · Own      | en     | en     |
+| [dieter-rams](./public/dieter-rams/)   | Rams · Less      | en     | en     |
+| [bong-cinema](./public/bong-cinema/)   | 봉준호 · Cinema  | ko     | ko, en |
+| [son-pitch](./public/son-pitch/)       | 손흥민 · Pitch   | ko     | ko, en |
+| [yoo-variety](./public/yoo-variety/)   | 유재석 · Variety | ko     | ko     |
+| [baek-table](./public/baek-table/)     | 백종원 · Table   | ko     | ko     |
 
 ## Role crews
 
@@ -65,30 +65,30 @@ Each crew folder has role seats as `roles/<crew>/<role>/PERSONA.md`. Roles use `
 
 ### vibe-coding (Vibe Crew)
 
-| Role | Slug |
-| --- | --- |
+| Role                                              | Slug              |
+| ------------------------------------------------- | ----------------- |
 | [orchestrator](./roles/vibe-coding/orchestrator/) | `vc-orchestrator` |
-| [planner](./roles/vibe-coding/planner/) | `vc-planner` |
-| [developer](./roles/vibe-coding/developer/) | `vc-developer` |
-| [dba](./roles/vibe-coding/dba/) | `vc-dba` |
-| [reviewer](./roles/vibe-coding/reviewer/) | `vc-reviewer` |
-| [deployer](./roles/vibe-coding/deployer/) | `vc-deployer` |
-| [scm](./roles/vibe-coding/scm/) | `vc-scm` |
-| [ui-designer](./roles/vibe-coding/ui-designer/) | `vc-ui-designer` |
-| [ux](./roles/vibe-coding/ux/) | `vc-ux` |
+| [planner](./roles/vibe-coding/planner/)           | `vc-planner`      |
+| [developer](./roles/vibe-coding/developer/)       | `vc-developer`    |
+| [dba](./roles/vibe-coding/dba/)                   | `vc-dba`          |
+| [reviewer](./roles/vibe-coding/reviewer/)         | `vc-reviewer`     |
+| [deployer](./roles/vibe-coding/deployer/)         | `vc-deployer`     |
+| [scm](./roles/vibe-coding/scm/)                   | `vc-scm`          |
+| [ui-designer](./roles/vibe-coding/ui-designer/)   | `vc-ui-designer`  |
+| [ux](./roles/vibe-coding/ux/)                     | `vc-ux`           |
 
 ### blog-author
 
-| Role | Slug |
-| --- | --- |
-| [lead](./roles/blog-author/lead/) | `ba-lead` |
-| [topic](./roles/blog-author/topic/) | `ba-topic` |
-| [outline](./roles/blog-author/outline/) | `ba-outline` |
-| [author](./roles/blog-author/author/) | `ba-author` |
+| Role                                          | Slug            |
+| --------------------------------------------- | --------------- |
+| [lead](./roles/blog-author/lead/)             | `ba-lead`       |
+| [topic](./roles/blog-author/topic/)           | `ba-topic`      |
+| [outline](./roles/blog-author/outline/)       | `ba-outline`    |
+| [author](./roles/blog-author/author/)         | `ba-author`     |
 | [experience](./roles/blog-author/experience/) | `ba-experience` |
-| [review](./roles/blog-author/review/) | `ba-review` |
-| [media](./roles/blog-author/media/) | `ba-media` |
-| [polish](./roles/blog-author/polish/) | `ba-polish` |
+| [review](./roles/blog-author/review/)         | `ba-review`     |
+| [media](./roles/blog-author/media/)           | `ba-media`      |
+| [polish](./roles/blog-author/polish/)         | `ba-polish`     |
 
 ## Personal (`user/`)
 
@@ -98,6 +98,6 @@ Do not put legal names, contacts, or private facts in the contract.
 
 ## Sync
 
-This mirror is published from the application catalog (`personas/catalog/` in the private monorepo) via `scripts/publish-public-contracts.sh`. Crew **apply prompts** on the product fetch from the application repo; this public tree is for browse and sparse-checkout.
+This mirror is published from the application catalog (`personas/catalog/` in the private monorepo) via `scripts/publish-public-contracts.sh`. Product **apply prompts** fetch raw `PERSONA.md` from **this** public tree (`roles/…`, `public/…`). Keep the mirror current after catalog edits.
 
 한국어: [README.ko.md](./README.ko.md)
