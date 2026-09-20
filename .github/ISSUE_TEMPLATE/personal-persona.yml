@@ -1,8 +1,6 @@
 name: Personal persona
 description: Request review to register a personal PERSONA.md under user/
 title: '[personal] '
-labels:
-  - personal
 body:
   - type: markdown
     attributes:
@@ -19,9 +17,10 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: language
+    id: native
     attributes:
-      label: Language
+      label: native (body language)
+      description: speaks must include this code. One PERSONA.md only — no PERSONA.ko.md.
       options:
         - ko
         - en

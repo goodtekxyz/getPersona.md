@@ -1,8 +1,9 @@
 # PERSONA.md
 
-> **Official public persona contract (v0.1)**  
+> **Public persona contract — world format (v0.2)**  
+> getPersona.md locks this SoR the way `DESIGN.md` locks UI.  
 > Only **public** data. Private soul never belongs here.  
-> Korean explanation: [PERSONA.ko.md](./PERSONA.ko.md) — same schema, not a second format.
+> v0.2 is **additive**: v0.1 files still parse; writers emit Meta and prefer Policy / Success / Provenance.
 
 ---
 
@@ -21,6 +22,8 @@ What actually changes generation:
 4. **Concrete speech constraints** (observable habits, not vibes)
 5. **Examples** (few-shot beats adjectives)
 6. **Hard refusals** (character integrity)
+7. **Structured policy** (safety categories, not only free-text refusals)
+8. **Observable success** (what “done” looks like for this seat)
 
 If a field cannot change an agent’s next token under conflict, it does not belong in the required set.
 
@@ -30,16 +33,18 @@ If a field cannot change an agent’s next token under conflict, it does not bel
 
 **PERSONA** is a portable, public contract an agent can load to inhabit a voice — without private memory.
 
+It is an **embodiment / constitution** format. It is **not** an A2A Agent Card, MCP tool descriptor, or transport endpoint list. Those may be **projected** from PERSONA (see `PERSONA-AGENT-CARD.md`) but must not replace this file.
+
 ---
 
 ## 2. Layers (D-018)
 
-| Layer               | Artifact                      | Visibility      | Contains                                                       |
-| ------------------- | ----------------------------- | --------------- | -------------------------------------------------------------- |
-| **Public contract** | `PERSONA.md` | Always public   | Identity, purpose, speech rules, priorities, samples, refusals |
-| **Private soul**    | Platform only                 | Account-private | Relationships, experience, remember → promote                  |
+| Layer               | Artifact      | Visibility      | Contains                                                                              |
+| ------------------- | ------------- | --------------- | ------------------------------------------------------------------------------------- |
+| **Public contract** | `PERSONA.md`  | Always public   | Identity, purpose, speech, priorities, samples, refusals, policy, success, provenance |
+| **Private soul**    | Platform only | Account-private | Relationships, experience, remember → promote                                         |
 
-Age, family, biography may appear **only if the author chooses to publish them**.  
+Age, family, biography may appear **only if the author chooses to publish them** (`## Public facts`).  
 Diaries, DMs, medical/financial secrets, trust graphs, LTM dumps — **never** in this file.
 
 ---
@@ -50,160 +55,127 @@ Diaries, DMs, medical/financial secrets, trust graphs, LTM dumps — **never** i
 2. **Embodiment over aesthetics** — fields must steer behavior, not decorate a card.
 3. **Examples > adjectives** — prefer sample lines and concrete habits.
 4. **Priorities > “stance”** — ordered values beat mood labels.
-5. **Refusals are hard** — soft preferences go in habits; hard stops go in refusals.
+5. **Refusals are hard** — soft preferences go in habits; hard stops go in refusals / policy.
 6. **Additive evolution** — `schemaVersion` bumps; never relocate soul data into the contract.
 7. **One format** — famous showcase and user-published personas use the same schema.
-8. **Interview compiles the file** — humans speak; the agent writes v0.1 JSON; humans confirm or reject lines.
-
-### Spec language vs voice language
-
-- This file is the sole schema (English).
-- `PERSONA.ko.md` is the same spec in Korean for humans. Not a second `schemaVersion`.
-- A persona contract is written in `identity.language` only. Do not ship bilingual samples.
-
-### Authoring (D-021) — interview, not a form
-
-A human does not type `habits`, `samples`, or `priorities` into a form.  
-An interviewer asks; a compiler writes v0.1 JSON; the human only **confirms or rejects** compiled lines.  
-The interview transcript is **not** part of the contract.
-
-Interview language = the conversation language.  
-`identity.language` = the voice’s language. They may differ.
-
-1. **Frame** — What does this voice do in public? Who is speaking? Which language does the voice use?
-2. **Speak** — Three in-character replies, different speech acts (assert / decline / invite, or observe / question / cut). Those replies are sample candidates.
-3. **Conflict** — When two goods collide, which wins? → ordered `priorities`.
-4. **Hard no** — What must this voice never say or claim? → `refusals`.
-5. **Confirm** — Show compiled `PERSONA.md`. Infer `register` / `length` / `person` from the samples. Do not ask the human to fill blanks.
-
-Do not ask “list three habits” or “what is your tone?”. Habits are extracted from how they spoke, then linted with §4.3–4.5.
+8. **Machine-readable meta** — `## Meta` carries `schema` / `kind` / `license` so a file alone is auditable.
+9. **Host packs ≠ this file** — AGENTS.md / CLAUDE.md / Cursor rules may _apply_ a crew; PERSONA.md stays the inhabit SoR.
 
 ### Rejected as required fields
 
 | Tempting field                       | Why rejected                                           |
 | ------------------------------------ | ------------------------------------------------------ |
-| Free-text **tone adjectives**          | Weak signal; collapses to stereotype                   |
-| Free-text **MBTI / Big Five / traits** | Pseudopsychology; poor agent control                   |
-| **System prompt** blob                 | Opaque, non-portable, invites private leakage          |
-| **Memory / RAG hooks**                 | Soul layer — not public                                |
-| **Tool allow-lists**                   | Runtime/product concern; not the public voice contract |
-| **Private relationships**              | Soul layer                                             |
-| **Catchphrase-only samples**           | Model already overfits; voice collapses under pressure |
-| **Per-kind sample maps / Q–A pairs**   | Extra structure; the model follows the form            |
-| **Negative-sample field**              | Model echoes the banned voice; use a habit instead     |
-| **Hand-filled habit / sample forms**   | Humans are bad compilers; interview, then confirm      |
+| Free-text **말투 / tone adjectives** | Weak signal; collapses to stereotype                   |
+| Free-text **성향 / MBTI / Big Five** | Pseudopsychology; poor agent control                   |
+| **System prompt** blob               | Opaque, non-portable, invites private leakage          |
+| **Memory / RAG hooks**               | Soul layer — not public                                |
+| **Tool allow-lists**                 | Runtime/product concern; not the public voice contract |
+| **Private relationships**            | Soul layer                                             |
+| **Live endpoints / A2A url**         | Host Agent Card concern — see mapping doc              |
 
 ---
 
-## 4. Required fields (v0.1)
+## 4. Required fields (v0.2)
 
-### 4.1 Meta
+### 4.1 Meta (`## Meta`) — machine header
 
-| Field           | Type              | Why                                                                 |
-| --------------- | ----------------- | ------------------------------------------------------------------- |
-| `schemaVersion` | `"0.1"`           | Conformance                                                         |
-| `slug`          | kebab-case string | Stable id                                                           |
-| `name`          | string            | Display name                                                        |
-| `summary`       | string ≤ 200      | One-line public pitch (catalog cards)                               |
-| `license`       | string            | Reuse rules (marketplace-ready), e.g. `CC-BY-4.0`, `CC0-1.0`, `ARR` |
+| Field     | Type / values                    | Why                                       |
+| --------- | -------------------------------- | ----------------------------------------- |
+| `schema`  | `0.1` \| `0.2`                   | Format conformance (writers emit `0.2`)   |
+| `kind`    | `personal` \| `public` \| `role` | Same as folder kind; duplicated for audit |
+| `slug`    | kebab-case                       | Stable id (folder still wins on conflict) |
+| `license` | SPDX-style id (e.g. `CC-BY-4.0`) | Reuse rules; mirror of `## License`       |
 
-### 4.2 Identity
+Folder path remains authoritative for slug/kind when Meta is absent (v0.1 compat).  
+**0.2-catalog** conformance: Meta SHOULD be present in the file.
 
-| Field               | Type           | Why                                           |
-| ------------------- | -------------- | --------------------------------------------- |
-| `identity.who`      | string         | Public framing of who is speaking             |
-| `identity.intent`   | string         | Purpose when speaking — the job of this voice |
-| `identity.language` | BCP-47-ish tag | `ko`, `en`, …                                 |
+### 4.2 Identity / Speech / Priorities / Samples / Refusals
 
-`who` is not a legal identity claim. It is the **role the agent performs in public**.
+Unchanged in meaning from v0.1 (see prior tables), except language. `identity.native` is the one content language. `identity.speaks` is every language the voice may answer in, and it includes `native`. `identity.language` is `speaks` joined with `, ` so older readers still see one line. A single legacy code (`en` or `ko`) fills both. `ko, en` without `native` is refused.
 
-### 4.3 Speech (constraints, not vibes)
+### 4.3 Kind (catalog layout)
 
-| Field             | Type                                             | Why                                                                  |
-| ----------------- | ------------------------------------------------ | -------------------------------------------------------------------- |
-| `speech.register` | `formal` \| `neutral` \| `casual`                | Closed enum — measurable                                             |
-| `speech.length`   | `terse` \| `short` \| `medium` \| `long`         | Closed enum                                                          |
-| `speech.person`   | `first` \| `first_plural` \| `second` \| `third` | Pronoun default                                                      |
-| `speech.habits`   | 1–5 strings                                      | **Concrete** rules (“One idea per sentence”, “No corporate buzzwords”) |
-
-Habits must be testable instructions.  
-Bad: `witty`. Good: `Do not explain the joke`.
-
-One constraint per habit. Do not restate a `priority` as a habit — habits steer the mouth; priorities settle conflicts.
-
-### 4.4 Priorities
-
-| Field        | Type                     | Why                           |
-| ------------ | ------------------------ | ----------------------------- |
-| `priorities` | 2–7 strings, **ordered** | What wins when goals conflict |
-
-This replaces vague “stance”.  
-Example: `Clarity over jargon`, `The team before the self`.
-
-### 4.5 Samples
-
-| Field     | Type        | Why                                |
-| --------- | ----------- | ---------------------------------- |
-| `samples` | 2–5 strings | Strongest few-shot signal for LLMs |
-
-Samples should sound like the persona **already speaking**, not describe the persona.
-
-Writing rules (no extra keys):
-
-- An utterance, not a bio line and not a famous catchphrase the model already knows.
-- Catalog bar: **≥3 samples** covering **≥2 speech acts** (assert, decline, question, observe, invite, cut).
-- Do not add kind-tagged maps or prompt–response pairs. Flat strings only.
-
-### 4.6 Refusals
-
-| Field      | Type         | Why                    |
-| ---------- | ------------ | ---------------------- |
-| `refusals` | 1–12 strings | Hard public boundaries |
-
-Not preferences. Violating a refusal means the agent is out of contract.
-
----
-
-## 4.7 Kind (catalog layout)
-
-| Field  | Type                              | Why                                                            |
-| ------ | --------------------------------- | -------------------------------------------------------------- |
+| Field  | Type                             | Why                                                            |
+| ------ | -------------------------------- | -------------------------------------------------------------- |
 | `kind` | `personal` \| `public` \| `role` | Which tree the contract lives in. Default `public` if omitted. |
 
 ```
-user/<slug>/PERSONA.md      kind=personal
-public/<slug>/PERSONA.md    kind=public
-roles/<slug>/PERSONA.md     kind=role
+user/<slug>/PERSONA.md                 kind=personal
+public/<slug>/PERSONA.md               kind=public
+roles/<domain>/<role>/PERSONA.md       kind=role   (crew layout)
 ```
 
 One schema. Three jobs: a portable self, a public-figure contract, a role an agent inhabits.
 
-## 5. Optional (public by choice)
+---
 
-| Field                  | Type            | Notes                                                                    |
-| ---------------------- | --------------- | ------------------------------------------------------------------------ |
-| `tags`                 | string[]        | Discovery                                                                |
-| `links`                | url[]           | Public sites only                                                        |
-| `publicFacts`          | string[] or map | Age band, hometown, job title, family — **only if intentionally public** |
-| `attribution`          | string          | Provenance (“inspired by public talks…”, author credit)                  |
-| `repoUrl` / `cloneUrl` | url             | Distribution envelope (catalog / git)                                    |
+## 5. Optional (public by choice) — v0.2 additive
+
+| Field                  | Type                         | Notes                                                      |
+| ---------------------- | ---------------------------- | ---------------------------------------------------------- |
+| `tags`                 | string[]                     | Discovery                                                  |
+| `links`                | url[] (`## Links`)           | Public sites only                                          |
+| `publicFacts`          | string[] (`## Public facts`) | Age band, hometown, job — **only if intentionally public** |
+| `attribution`          | string                       | Human provenance prose                                     |
+| `provenance`           | object (`## Provenance`)     | `notARealPerson: true/false`, `source: {url\|note}` lines  |
+| `laws`                 | string[]                     | Role crews. Additive working rules (`## Laws`)             |
+| `policy`               | PolicyEntry[] (`## Policy`)  | Structured safety: `category/severity: note`               |
+| `success`              | string[] (`## Success`)      | Observable checks that the seat did its job                |
+| `contractVersion`      | SemVer                       | Content version (`## Version` → `contract:`)               |
+| `contractUpdated`      | `YYYY-MM-DD`                 | Last content change                                        |
+| `changelog`            | string[]                     | Recent content notes                                       |
+| `repoUrl` / `cloneUrl` | url                          | Distribution envelope (catalog / git)                      |
+
+### 5.1 Policy categories
+
+`age` · `dual-use` · `medical` · `legal` · `financial` · `cyber` · `privacy` · `likeness` · `crisis` · `other`  
+Severity: `hard` (default) · `soft` · `advisory`  
+Line form: `- medical/hard: No diagnosis; suggest professional care`
+
+### 5.2 Kind completeness matrix
+
+| Field / section     | personal | public                    | role          |
+| ------------------- | -------- | ------------------------- | ------------- |
+| Core 6 + Meta       | MUST     | MUST                      | MUST          |
+| Policy              | SHOULD   | SHOULD                    | SHOULD        |
+| Success             | MAY      | MAY                       | SHOULD        |
+| Laws                | MAY      | MAY                       | SHOULD        |
+| Version/Changelog   | MAY      | SHOULD                    | MUST (crews)  |
+| Provenance          | MAY      | SHOULD (`notARealPerson`) | MAY           |
+| Attribution+License | SHOULD   | MUST (market)             | MUST (market) |
+
+### 5.3 i18n (D-078)
+
+- One contract file: `PERSONA.md`. There is no `PERSONA.ko.md`.
+- Headings stay English (`## Who`, `## Intent`, `## Language`, `register` / `length` / `person`).
+- Body language is `native`. Catalog locale filter and “answer in the user’s language” use `speaks`.
+- Role contracts are `native: en`, `speaks: ko, en`. Korean role names stay in UI messages, not in the contract.
+- A public voice whose body is Korean keeps that body. `yoo-variety` and `baek-table` speak Korean only. `son-pitch` and `bong-cinema` speak Korean and English; the file stays Korean.
 
 ---
 
-## 6. Canonical `PERSONA.md` (v0.1)
-
-The file on disk is markdown. Slug and kind come from the folder (`public/jobs-keynote` → slug `jobs-keynote`, kind `public`). Apps may serialize the same fields as JSON over the wire; that is not a second contract file.
+## 6. Canonical `PERSONA.md` (v0.2)
 
 ```markdown
 # {name}
 
 {summary}
 
+## Meta
+
+- schema: 0.2
+- kind: role
+- slug: vc-developer
+- license: CC-BY-4.0
+
 ## Who
 
 ## Intent
 
 ## Language
+
+- native: en
+- speaks: ko, en
 
 ## Speech
 
@@ -224,64 +196,53 @@ The file on disk is markdown. Slug and kind come from the folder (`public/jobs-k
 
 - {refusal}
 
+## Policy
+
+- privacy/hard: {note}
+
+## Success
+
+- {observable check}
+
 ## License
 
 CC-BY-4.0
-
-## Tags
-
-- keynote
-
-## Attribution (optional)
 ```
 
 ---
 
 ## 7. Conformance
 
-| Level           | Meaning                                                                                   |
-| --------------- | ----------------------------------------------------------------------------------------- |
-| **0.1-core**    | All required fields present; enums valid; ≥2 samples; ≥2 priorities; ≥1 refusal; ≥1 habit |
-| **0.1-catalog** | core + `repoUrl` + ≥3 samples spanning ≥2 speech acts                                     |
-| **0.1-market**  | catalog + explicit `license` + `attribution`                                              |
+| Level           | Meaning                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------- |
+| **0.2-core**    | Required fields; enums valid; ≥2 samples; ≥2 priorities; ≥1 refusal; ≥1 habit; Meta preferred |
+| **0.2-catalog** | core + Meta present + `repoUrl` or resolvable tree URL                                        |
+| **0.2-market**  | catalog + SPDX-style `license` + `attribution` + Policy (≥1) + Provenance when `kind=public`  |
 
-Validators should reject adjective-only `habits` / `priorities` when they match a denylist of vibe words (`warm`, `nice`, `cool`, `friendly` alone, etc.) — prefer lint warnings in v0.1, hard fail later.
+v0.1-core/catalog/market remain valid for unmigrated files. Writers emit 0.2.
 
 ---
 
 ## 8. How an agent uses this
 
 1. Load the public contract (URL, git path, or catalog API).
-2. Compile a **short** system projection: who + intent + priorities + speech enums/habits + refusals + samples.
-3. Do **not** paste private soul. If soul is linked for this account, retrieve gated memory separately.
-4. On conflict: higher `priorities` win; `refusals` always win.
+2. Compile a **short** system projection: who + intent + priorities + speech + refusals + samples + laws + **policy** + **success**.
+3. Do **not** paste private soul.
+4. On conflict: higher `priorities` win; `refusals` and `policy` hard lines always win.
 
 Contract = constitution. Soul = life under it.
 
 ---
 
-## 9. Product loop on this format
+## 9. Related SoRs
 
-```text
-Interview (speak) → compile v0.1 → human confirms
-  → showcase or publish PERSONA (same schema, public)
-  → star · checkout · use (agents read the file)
-  → popularity / usage
-  → marketplace (license + attribution matter)
-```
-
-Soul (remember → promote) starts after the contract exists. The interview is not a memory dump.
-
----
-
-## 10. Related SoRs
-
-| Doc                   | Owns                                      |
-| --------------------- | ----------------------------------------- |
-| **PERSONA.md** (this) | Public contract schema & embodiment rules |
-| `DESIGN.md`           | UI                                        |
-| `07-growth.md`        | Private remember → promote                |
-| D-018 / D-019 / D-021 | Layer split + this file as SoR + interview |
+| Doc                       | Owns                                      |
+| ------------------------- | ----------------------------------------- |
+| **PERSONA.md** (this)     | Public contract schema & embodiment rules |
+| **PERSONA-AGENT-CARD.md** | Mapping to A2A-shaped discovery cards     |
+| `DESIGN.md`               | UI                                        |
+| `07-growth.md`            | Private remember → promote                |
+| D-018 / D-019 / D-048     | Layer split + this file as SoR + v0.2     |
 
 **getPersona.md owns this format.**  
 Implementations must not invent a second public persona schema without bumping `schemaVersion` here.
