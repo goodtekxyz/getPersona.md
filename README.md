@@ -98,6 +98,6 @@ Do not put legal names, contacts, or private facts in the contract.
 
 ## Sync
 
-This mirror is published from the application catalog (`personas/catalog/` in the private monorepo) via `scripts/publish-public-contracts.sh`. Product **apply prompts** fetch raw `PERSONA.md` from **this** public tree (`roles/…`, `public/…`). Keep the mirror current after catalog edits.
+**SoR:** this repository. Product apps run `pnpm catalog:sync` / prod CD to pull `public/`, `roles/`, `user/` into the app. Apply prompts fetch raw files from here. Do not edit the app monorepo catalog as the long-term source.
 
 한국어: [README.ko.md](./README.ko.md)

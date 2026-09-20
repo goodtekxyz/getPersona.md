@@ -98,6 +98,6 @@ cat roles/vibe-coding/developer/PERSONA.md
 
 ## 동기화
 
-이 미러는 앱 카탈로그(`personas/catalog/`)에서 `scripts/publish-public-contracts.sh`로 게시합니다. 제품의 **적용 프롬프트**는 **이** 공개 트리에서 raw `PERSONA.md`를 가져옵니다 (`roles/…`, `public/…`). 카탈로그를 바꾼 뒤에는 미러를 다시 게시하세요.
+**SoR:** 이 저장소. 앱은 `pnpm catalog:sync` / 운영 CD로 `public/`, `roles/`, `user/`를 가져갑니다. 적용 프롬프트도 여기 raw를 봅니다. 앱 모노레포 카탈로그를 장기 편집본으로 쓰지 마세요.
 
 English: [README.md](./README.md)
