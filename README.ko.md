@@ -1,19 +1,63 @@
+[한국어](README.ko.md) | [English](README.md)
+
 # getPersona.md
 
-공식 **공개 페르소나 계약** 저장소입니다. 목소리를 체크아웃하는 곳이며, **앱 소스가 아닙니다**.
+제품 사이트에서 페르소나를 고르고, 짧게 말해 본 뒤, 이미 쓰는 AI에 그대로 적용하세요.
 
-제품: [getpersona.md](https://getpersona.md) · 기본 UI는 한국어, 영어는 `/en`.
+**제품:** [getpersona.md](https://getpersona.md)
+
+## 이게 뭔가요
+
+페르소나는 AI에게 “이번 대화에서는 이렇게 말하라”고 알려 주는 짧은 설명입니다. 누구의 목소리인지, 무엇을 지키는지, 어디서 선을 긋는지가 적혀 있습니다.
+
+각 페르소나는 이 깃허브에 파일 하나로 있고, [getpersona.md](https://getpersona.md)에서 목록을 보고 사이트에서 짧게(대략 세 번) 대화해 볼 수 있습니다. ChatGPT, Claude, Cursor에서 그 목소리를 계속 쓰려면 사이트의 **적용 문장**을 복사해 그 도구에 붙여 넣으면 됩니다. 그러면 그 AI가 여기서 설명을 불러와 그 목소리로 답합니다.
+
+- **적용에는 계정이 필요 없습니다.**
+- 사이트에 저장해 두고 싶을 때만 가입하면 됩니다.
+- “나처럼 말하는” 개인 페르소나를 제품에서 만드는 기능은 아직 대기열 단계입니다.
+
+## 적용하는 방법
+
+1. [getpersona.md](https://getpersona.md)에서 페르소나를 고릅니다.
+2. (선택) 사이트에서 짧게 대화해 목소리를 들어 봅니다.
+3. 페르소나 페이지에서 **적용 문장**을 복사합니다.
+4. ChatGPT, Claude, Cursor에 붙여 넣습니다.
+5. 그 AI가 설명을 불러와 그 목소리로 답합니다.
+
+평소에는 파일을 직접 받을 필요가 없습니다.
+
+## 적용하면 AI가 어떻게 달라지나요
+
+붙여 넣은 AI가 그 페르소나의 말투·우선순위·선을 따라갑니다. 평범한 비서 말투로 돌아가면, 새 대화에서 적용 문장을 다시 붙여 넣으세요.
+
+## 개인 페르소나 올리기 (이슈 / 변경 제안)
+
+공개 목록에 올릴 개인 페르소나는 누구나 제안할 수 있습니다. 깃허브가 익숙하지 않다면 사이트 버튼을 쓰는 편이 쉽습니다.
+
+1. [개인 페르소나 등록](https://getpersona.md/personas/submit) 페이지를 엽니다.
+2. **가장 쉬운 방법:** **이슈로 검수 받기**를 누릅니다. 초안이 채워진 깃허브 이슈가 열립니다. 통과하면 여기에 `user/<이름>/` 아래로 올립니다.
+3. **깃허브를 아는 경우:** **파일 만들기**로 변경을 제안합니다. 먼저 포크가 필요할 수 있습니다. 합쳐지면 목록에 나타납니다.
+
+실명·전화번호·이메일·사적인 내용은 넣지 마세요.
+
+## 이 저장소에 있는 것
 
 ```
-user/          개인  — 가져가는 나 (이슈/PR로 등록; 샘플 자아는 없음)
-public/        공개  — 공개 기록으로 컴파일한 인물
-roles/         역할  — 에이전트가 입는 직무, 크루 단위
+user/      사람들이 공유한 개인 페르소나
+public/    공개 인물
+roles/     직무 역할 (팀 단위)
 ```
 
-- 계약 스키마 (영문 헤딩): [`PERSONA.md`](./PERSONA.md)
-- English overview: [`README.md`](./README.md)
-- **목소리당 파일은 하나:** `PERSONA.md`만 씁니다. `PERSONA.ko.md`는 없습니다.
-- 본문 언어는 `native`, 답할 수 있는 언어는 `speaks`(`native` 포함)입니다.
+목소리마다 폴더 하나, 그 안에 설명 파일(`PERSONA.md`) 하나가 있습니다.
+
+제품 랜딩에 보이는 팀:
+
+1. **[vibe-coding](./roles/vibe-coding/)** — 바이브크루 · 사이트에서 적용: `/personas/apply/vibe-coding`
+2. **[blog-author](./roles/blog-author/)** — 블로그 저자 · `/personas/apply/blog-author`
+
+## 개발자용 (선택)
+
+폴더 하나만 받고 싶다면:
 
 ```bash
 git clone --filter=blob:none --sparse https://github.com/goodtekxyz/getPersona.md.git
@@ -22,82 +66,4 @@ git sparse-checkout set roles/vibe-coding/developer
 cat roles/vibe-coding/developer/PERSONA.md
 ```
 
-## 언어 (D-078)
-
-| 종류                                      | 보통 `native` | 보통 `speaks` |
-| ----------------------------------------- | ------------- | ------------- |
-| 영어 공개 인물                            | `en`          | `en`          |
-| 한국어 전용 공개 인물 (유재석, 백종원 등) | `ko`          | `ko`          |
-| 이중 언어 공개 인물 (손흥민, 봉준호 등)   | `ko`          | `ko, en`      |
-| 역할 크루                                 | `en`          | `ko, en`      |
-
-사이트 언어(`/` · `/en`)는 `speaks`로 걸러 줍니다. 언어별 트윈 파일을 고르지 않습니다.
-
-## 공개 인물
-
-| Slug                                   | 표시             | native | speaks |
-| -------------------------------------- | ---------------- | ------ | ------ |
-| [musk-x](./public/musk-x/)             | Musk · X         | en     | en     |
-| [trump-rally](./public/trump-rally/)   | Trump · Rally    | en     | en     |
-| [jobs-keynote](./public/jobs-keynote/) | Jobs · Keynote   | en     | en     |
-| [oprah-own](./public/oprah-own/)       | Oprah · Own      | en     | en     |
-| [dieter-rams](./public/dieter-rams/)   | Rams · Less      | en     | en     |
-| [bong-cinema](./public/bong-cinema/)   | 봉준호 · Cinema  | ko     | ko, en |
-| [son-pitch](./public/son-pitch/)       | 손흥민 · Pitch   | ko     | ko, en |
-| [yoo-variety](./public/yoo-variety/)   | 유재석 · Variety | ko     | ko     |
-| [baek-table](./public/baek-table/)     | 백종원 · Table   | ko     | ko     |
-
-## 역할 크루
-
-제품 랜딩에 노출:
-
-1. **[vibe-coding](./roles/vibe-coding/)** — 바이브크루 (`vc-*`). 적용: `/personas/apply/vibe-coding`
-2. **[blog-author](./roles/blog-author/)** — 블로그 저자 (`ba-*`). 적용: `/personas/apply/blog-author`
-
-같은 트리에 있음 (적용 API·카탈로그 파일; 랜딩 비노출):
-
-3. **[storydesk](./roles/storydesk/)** — `sd-*`
-4. **[saju](./roles/saju/)** — `sj-*`
-5. **[tarot](./roles/tarot/)** — `tr-*`
-6. **[counsel](./roles/counsel/)** — `cc-*`
-
-좌석은 `roles/<크루>/<역할>/PERSONA.md`. 역할은 `native: en`, `speaks: ko, en`.
-
-### vibe-coding (바이브크루)
-
-| 역할                                              | Slug              |
-| ------------------------------------------------- | ----------------- |
-| [orchestrator](./roles/vibe-coding/orchestrator/) | `vc-orchestrator` |
-| [planner](./roles/vibe-coding/planner/)           | `vc-planner`      |
-| [developer](./roles/vibe-coding/developer/)       | `vc-developer`    |
-| [dba](./roles/vibe-coding/dba/)                   | `vc-dba`          |
-| [reviewer](./roles/vibe-coding/reviewer/)         | `vc-reviewer`     |
-| [deployer](./roles/vibe-coding/deployer/)         | `vc-deployer`     |
-| [scm](./roles/vibe-coding/scm/)                   | `vc-scm`          |
-| [ui-designer](./roles/vibe-coding/ui-designer/)   | `vc-ui-designer`  |
-| [ux](./roles/vibe-coding/ux/)                     | `vc-ux`           |
-
-### blog-author
-
-| 역할                                          | Slug            |
-| --------------------------------------------- | --------------- |
-| [lead](./roles/blog-author/lead/)             | `ba-lead`       |
-| [topic](./roles/blog-author/topic/)           | `ba-topic`      |
-| [outline](./roles/blog-author/outline/)       | `ba-outline`    |
-| [author](./roles/blog-author/author/)         | `ba-author`     |
-| [experience](./roles/blog-author/experience/) | `ba-experience` |
-| [review](./roles/blog-author/review/)         | `ba-review`     |
-| [media](./roles/blog-author/media/)           | `ba-media`      |
-| [polish](./roles/blog-author/polish/)         | `ba-polish`     |
-
-## 개인 (`user/`)
-
-샘플 자아는 없습니다. [getpersona.md/personas/submit](https://getpersona.md/personas/submit)에서 이슈 또는 PR로 등록합니다. 파일 위치는 `user/<slug>/PERSONA.md`.
-
-실명·연락처·비공개 정보는 계약에 넣지 마세요.
-
-## 동기화
-
-**SoR:** 이 저장소. 앱은 `pnpm catalog:sync` / 운영 CD로 `public/`, `roles/`, `user/`를 가져갑니다. 적용 프롬프트도 여기 raw를 봅니다. 앱 모노레포 카탈로그를 장기 편집본으로 쓰지 마세요.
-
-English: [README.md](./README.md)
+대부분은 이 단계 없이 [getpersona.md](https://getpersona.md)의 적용 문장만 쓰면 됩니다.
