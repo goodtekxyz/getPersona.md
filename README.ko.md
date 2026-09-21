@@ -2,6 +2,9 @@
 
 # getPersona.md
 
+> ⭐ **이 저장소가 도움이 됐다면 Star 해 주세요** — 더 많은 사람이 찾을 수 있어요.
+> [GitHub에서 Star](https://github.com/goodtekxyz/getPersona.md)
+
 AI 에이전트에 페르소나를 부여하세요.
 
 **제품:** [getpersona.md](https://getpersona.md)
@@ -54,3 +57,12 @@ cat roles/vibe-coding/developer/PERSONA.md
 ```
 
 대부분은 사이트에서 적용하기만 쓰면 됩니다.
+
+## goodtek이 만든다
+
+같은 팀이 만드는 제품·커뮤니티:
+
+- [goodtek](https://goodtek.xyz) — 회사·제품 허브
+- [llms](https://llms.goodtek.xyz) — 여러 LLM 계정 라우팅
+- [vibePulse](https://vibepulse.goodtek.xyz) — 웹·API 업타임 모니터
+- [바이브크루](https://vibecrew.gg) — 한국어 바이브코딩 빌더 커뮤니티

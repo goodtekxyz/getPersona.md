@@ -2,6 +2,9 @@
 
 # getPersona.md
 
+> ⭐ **If this helps your agents, please star the repo** — it helps others find it.
+> [Star on GitHub](https://github.com/goodtekxyz/getPersona.md)
+
 Give your AI agent a persona.
 
 **Product:** [getpersona.md/en](https://getpersona.md/en)
@@ -54,3 +57,12 @@ cat roles/vibe-coding/developer/PERSONA.md
 ```
 
 Most people only need Apply on the site.
+
+## Built by goodtek
+
+Same family of products and community:
+
+- [goodtek](https://goodtek.xyz) — company hub
+- [llms](https://llms.goodtek.xyz) — multi-LLM routing
+- [vibePulse](https://vibepulse.goodtek.xyz) — uptime monitoring
+- [VibeCrew](https://vibecrew.gg) — Korean vibe-coding builder community
