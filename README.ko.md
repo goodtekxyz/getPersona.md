@@ -58,11 +58,11 @@ cat roles/vibe-coding/developer/PERSONA.md
 
 대부분은 사이트에서 적용하기만 쓰면 됩니다.
 
-## 만듭니다.
+## goodtek이 만듭니다.
 
 같은 팀이 만드는 제품·커뮤니티:
 
 - [goodtek](https://goodtek.xyz) — 회사·제품 허브
 - [llms](https://llms.goodtek.xyz) — 여러 LLM 계정 라우팅
 - [vibePulse](https://vibepulse.goodtek.xyz) — 웹·API 업타임 모니터
-- [바이브크루](https://vibecrew.jp) — 한국어 바이브코딩 빌더 커뮤니티
+- [바이브크루](https://vibecrew.kr) — 한국어 바이브코딩 빌더 커뮤니티
