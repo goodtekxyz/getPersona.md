@@ -58,11 +58,11 @@ cat roles/vibe-coding/developer/PERSONA.md
 
 Most people only need Apply on the site.
 
-## Built by goodtek
+## Made by.
 
 Same family of products and community:
 
 - [goodtek](https://goodtek.xyz) — company hub
 - [llms](https://llms.goodtek.xyz) — multi-LLM routing
 - [vibePulse](https://vibepulse.goodtek.xyz) — uptime monitoring
-- [VibeCrew](https://vibecrew.gg) — Korean vibe-coding builder community
+- [VibeCrew](https://vibecrew.jp) — Korean vibe-coding builder community
