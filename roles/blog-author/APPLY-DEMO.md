@@ -1,27 +1,26 @@
-# Blog Author · Apply proof (D-086 / D-086 live)
+# Blog Author · systematic persona engineering
 
-Viral unit: **same prompt, contract on/off — live on the landing `#proof`**.
+Apply the whole crew, then let **lead** attach one seat at a time.
 
-## Prompt
+## Pipeline (maker view)
 
-> 새 메모 앱을 한 문장으로 소개해 줘. 제일 중요한 것만.
+1. **조사 · 주제** (`ba-topic`) — reader, why-now, non-goals, notes  
+2. **경험 질문** (`ba-experience`) — five intake prompts; unanswered → **GATE** (never invent)  
+3. **문단 구성** (`ba-outline`) — H2 skeleton, slots  
+4. **글 채우기** (`ba-author` + `voice-*`) — draft in the chosen cadence  
+5. **미디어** (`ba-media`) — figures / embeds / alt  
+6. **검토** (`ba-review`) — structure & fluff  
+7. **탈고** (`ba-polish`) — line edit, title/meta, ship checklist  
 
-## Without PERSONA.md
-
-`POST /v1/personas/catalog/plain/chat/stream` — generic assistant, no contract.
-
-## With Apply · `jobs-keynote`
-
-`POST /v1/personas/catalog/jobs-keynote/chat/stream` — inhabit Jobs · Keynote.
+Lead does not write the post. Product-intro may stop after author(+voice) for human edit.
 
 ## Surfaces
 
-- Landing `#proof` — button **이 화면에서 비교하기** streams both columns in parallel
-- No paste-elsewhere Apply CTA on the proof block
-- Secondary: `#talk` / catalog persona page
-- Live talk (`#talk`) remains D-022
+- Apply: `/personas/apply/blog-author` — pipeline strip + Apply pack  
+- Group: `/personas/catalog/groups/blog-author`  
+- Landing `#proof` stays Jobs · Keynote dual-stream (D-086 / TASK-173) — tone proof, not BA routing  
 
 ## Hook
 
-- KO: 말투를 설명하지 말고, 에이전트가 읽을 계약을 주세요.
+- KO: 말투를 설명하지 말고, 에이전트가 읽을 계약을 주세요.  
 - EN: Don't describe the tone. Give the agent a contract it can follow.
