@@ -2,6 +2,11 @@
 
 Content SemVer for role `PERSONA.md` files (`contractVersion`).
 
+## 1.6.0 — 2026-09-22
+
+- **D-086 정공법:** Landing Before/After Apply demo + viral hook copy; Blog Author **experience intake gate** (unanswered → user, never invent).
+- **Lead 1.4.0 / Experience 1.2.0:** lived-detail/essay path stops at incomplete intake.
+
 ## 1.5.0 — 2026-09-22
 
 - **`voice-maker-brief-ko` 1.0.0:** Korean **default** = minimal product/maker intro edit brief (fact skeleton; not writer cosplay).
