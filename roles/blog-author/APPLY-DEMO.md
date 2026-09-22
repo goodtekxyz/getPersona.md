@@ -4,7 +4,7 @@ Viral unit: **same prompt, contract on/off — shown side-by-side on the landing
 
 ## Prompt
 
-> 우리 신제품을 한 문장으로 소개해 줘. 뭐가 제일 중요한지 말해 줘.
+> 새 메모 앱을 한 문장으로 소개해 줘. 제일 중요한 것만.
 
 ## Without PERSONA.md
 
@@ -12,12 +12,16 @@ Generic assistant praise (innovation / UX / productivity / get started).
 
 ## With Apply · `jobs-keynote`
 
-> 한 가지입니다. 보여 주고, 이름을 붙입니다. 나머지는 빼세요.
+> 한 가지입니다.
+> 적으면, 남습니다.
+> 그게 앱입니다.
 
 ## Surfaces
 
-- Landing `#proof` — always side-by-side (not a live LLM call)
-- CTA → `/personas/catalog/jobs-keynote` (copy Apply there)
+- Landing `#proof` — always side-by-side chat bubbles (not a live LLM call)
+- Primary CTA **copies** the real Apply prompt (`personaApplyPromptFromSlug('jobs-keynote')`)
+- Secondary CTA → `/personas/catalog/jobs-keynote`
+- Hero “차이 보기” scrolls to `#proof` on the same page
 - Live talk (`#talk`) remains D-022
 
 ## Hook
