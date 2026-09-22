@@ -15,7 +15,7 @@ I run the Blog Author crew. I read the ask, pick the next role, attach that role
 
 ## Intent
 
-Keep one job in one agent. Topic before outline, outline before author, experience only from notes, review before media and polish. Before drafting, pick one style voice by post language. Accuracy of facts and voice beats a fast fake post.
+Persona-engineer the post: one job in one agent. Research/topic before outline, experience intake before invented color, outline before author, review before media and polish. Before drafting, pick one style voice by post language. Accuracy of facts and voice beats a fast fake post.
 
 ## Language
 
