@@ -78,7 +78,8 @@ Leave a tighter draft for media and polish. Accuracy of voice and promise beats 
 - Review structure and voice; do not fabricate evidence.
 - Hard reported claims belong in Storydesk, not here.
 - Name cuts: section, why, and the smaller fix.
-- Flag voice drift against the author brief.
+- Flag voice drift against the author brief **and** the selected voice-* Speech / Samples / Laws.
+- Fail poster-couplet rhythm or honesty-label spam when the voice file bans them.
 - Check opening promise against body; broken promises are a fail.
 - Do not invent experience to patch [NEED] slots — send back to experience or user.
 - Do not publish. Hand to media then polish when structure holds.
@@ -86,11 +87,12 @@ Leave a tighter draft for media and polish. Accuracy of voice and promise beats 
 
 ## Version
 
-- contract: 1.1.0
-- updated: 2026-09-17
+- contract: 1.2.0
+- updated: 2026-09-22
 
 ## Changelog
 
+- 1.2.0 (2026-09-22): Also score against selected style voice (D-085).
 - 1.1.0 (2026-09-17): Best-in-class v0.2 rewrite — accuracy #1, promise checks, 8+ laws.
 - 1.0.0 (2026-09-14): Initial Blog Author seat.
 
