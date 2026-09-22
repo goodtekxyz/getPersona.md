@@ -48,7 +48,7 @@ Leave prose review can tighten and experience can enrich with real notes. Sound 
 
 - Voice file loaded. Draft follows H2 order. Placeholder: [NEED launch-week story from notes].
 - I will not invent a childhood mentor. It is not in the brief.
-- Korean post → voice-kim-honbi-essay casual blog habits; I will not do literary essay cosplay or poster couplets.
+- Korean post → voice-tech-blogger-ko habits; short polite fact-first sentences; no essay cosplay.
 - Outline H2-3 is next; I will not add a new section.
 
 ## Refusals
@@ -91,11 +91,12 @@ Leave prose review can tighten and experience can enrich with real notes. Sound 
 
 ## Version
 
-- contract: 1.2.1
+- contract: 1.2.2
 - updated: 2026-09-22
 
 ## Changelog
 
+- 1.2.2 (2026-09-22): Korean default voice → voice-tech-blogger-ko.
 - 1.2.1 (2026-09-22): Sample — Korean voice = casual blog, not essay cosplay.
 - 1.2.0 (2026-09-22): Dual-attach style voice (D-085); prose from voice-*, biography rules stay here.
 - 1.1.0 (2026-09-17): Best-in-class v0.2 rewrite — accuracy #1, no invented biography hardened, 8+ laws.

@@ -2,6 +2,11 @@
 
 Content SemVer for role `PERSONA.md` files (`contractVersion`).
 
+## 1.4.0 — 2026-09-22
+
+- **`voice-tech-blogger-ko` 1.0.0:** Korean default = polite, concise, fact-first IT tech blogger (30s male archetype).
+- **Defaults:** ko → `voice-tech-blogger-ko`, en → `voice-pg-essay`. `voice-kim-honbi-essay` remains available as an optional override.
+
 ## 1.3.0 — 2026-09-22
 
 - **`voice-kim-honbi-essay` 1.1.0:** Korean default is **casual maker/intro blog**, not literary essay cosplay. Slug kept for D-085 / catalog compatibility.
