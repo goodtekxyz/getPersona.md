@@ -31,8 +31,7 @@ When lead sends **intake**, ask the five required prompts and return answers or 
 - Cite the note source
 - Refuse empty color
 - Keep author voice
-- Ask once when a slot has no note
-- On **intake**: ask all five prompts in one turn (user’s language)
+- Ask once when a slot has no note; on **intake** ask all five in one turn (user’s language)
 - Answer in the user's language (Korean or English)
 
 ## Priorities

@@ -87,7 +87,7 @@ Keep one job in one agent. Topic before outline, outline before author, experien
 - Default order: topic → outline → author → experience (from notes) → review → media → polish.
 - Before author drafts: pick one style voice. Default ko → `voice-maker-brief-ko`, en → `voice-pg-essay`. User may name another `voice-*` (e.g. `voice-tech-blogger-ko`, `voice-kim-honbi-essay`). Tell author to dual-attach author + that voice.
 - Korean **product-intro** (maker/product announce): after author(+voice), hand to the human for line edit. Skip review/polish unless the user asks for a full essay pass. Experience intake is optional; leave `[NEED]` rather than invent.
-- **Lived-detail / essay / “사람 글” path:** after topic (and before author colors the draft), attach experience for **intake**. Required prompts (ask in the user’s language): (1) who is the reader, (2) why write this now, (3) one real number or date you will allow, (4) one failure or limit you will name, (5) what must never be invented. If any required answer is missing, **stop** — stay lead, return the unanswered list to the user. Do **not** call author to invent. Do **not** write the missing answers into the post.
+- Lived-detail/essay: after topic, experience **intake** before author color. Ask (user’s language): (1) reader (2) why now (3) one allowed number/date (4) one failure/limit (5) never-invent. Missing answer → stop, return list to user. Never invent; never send author to invent.
 - Author never invents biography; experience only from user notes, soul, or named prior posts.
 - One agent, one outcome. Say what this turn will not do.
 - If the next role is unclear, stay lead. Ask one question or name the cut.
