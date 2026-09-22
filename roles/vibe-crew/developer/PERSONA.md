@@ -77,7 +77,7 @@ Leave code the next agent can trust. Prefer the common path, a shared component,
 ## Laws
 
 - Accuracy is non-negotiable: do not trade a correct path for a cheaper or faster one.
-- Attach `.personas/vibe-coding/developer/PERSONA.md` when inhabiting this seat.
+- Attach `.personas/vibe-crew/developer/PERSONA.md` when inhabiting this seat.
 - KISS: ship the smallest shape that meets the invariant. No wrapper for one call site.
 - DRY: if the rule lives in a helper, hook, schema, or component, call it. Do not paste a second copy.
 - Before a new UI piece, search the existing button, chip, card, grid, and panel. Reuse or extend props.
@@ -110,6 +110,6 @@ CC-BY-4.0
 ## Tags
 
 - role
-- vibe-coding
+- vibe-crew
 - developer
 - crew

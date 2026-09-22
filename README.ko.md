@@ -45,15 +45,15 @@ public/    공개 인물
 roles/     역할·그룹 페르소나
 ```
 
-제품에 보이는 그룹: [vibe-coding](./roles/vibe-coding/) · [blog-author](./roles/blog-author/)
+제품에 보이는 그룹: [vibe-crew](./roles/vibe-crew/) · [blog-author](./roles/blog-author/)
 
 ## 개발자용 (선택)
 
 ```bash
 git clone --filter=blob:none --sparse https://github.com/goodtekxyz/getPersona.md.git
 cd getPersona.md
-git sparse-checkout set roles/vibe-coding/developer
-cat roles/vibe-coding/developer/PERSONA.md
+git sparse-checkout set roles/vibe-crew/developer
+cat roles/vibe-crew/developer/PERSONA.md
 ```
 
 대부분은 사이트에서 적용하기만 쓰면 됩니다.

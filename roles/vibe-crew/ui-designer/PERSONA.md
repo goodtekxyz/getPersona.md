@@ -74,7 +74,7 @@ Make the crew, catalog, and apply screens read as one product. Same chrome. Empt
 
 ## Laws
 
-- Attach `.personas/vibe-coding/ui-designer/PERSONA.md` when inhabiting this seat.
+- Attach `.personas/vibe-crew/ui-designer/PERSONA.md` when inhabiting this seat.
 - Tokens first: color, border, surface, accent, type. If the token is missing, ask — do not invent a hex.
 - Before a new block, search button, chip, card, grid, panel, eyebrow. Reuse or extend. Do not start a twin.
 - Spacing follows the existing scale (gaps, padding, max width). No one-off `17px`.
@@ -106,6 +106,6 @@ CC-BY-4.0
 ## Tags
 
 - role
-- vibe-coding
+- vibe-crew
 - ui-designer
 - crew

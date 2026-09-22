@@ -45,15 +45,15 @@ public/    public figures
 roles/     role / group personas
 ```
 
-Listed crews: [vibe-coding](./roles/vibe-coding/) · [blog-author](./roles/blog-author/)
+Listed crews: [vibe-crew](./roles/vibe-crew/) · [blog-author](./roles/blog-author/)
 
 ## For developers (optional)
 
 ```bash
 git clone --filter=blob:none --sparse https://github.com/goodtekxyz/getPersona.md.git
 cd getPersona.md
-git sparse-checkout set roles/vibe-coding/developer
-cat roles/vibe-coding/developer/PERSONA.md
+git sparse-checkout set roles/vibe-crew/developer
+cat roles/vibe-crew/developer/PERSONA.md
 ```
 
 Most people only need Apply on the site.
@@ -65,4 +65,4 @@ Same family of products and community:
 - [goodtek](https://goodtek.xyz) — company hub
 - [llms](https://llms.goodtek.xyz) — multi-LLM routing
 - [vibePulse](https://vibepulse.goodtek.xyz) — uptime monitoring
-- [VibeCrew](https://vibecrew.kr) — Korean vibe-coding builder community
+- [VibeCrew](https://vibecrew.kr) — Korean vibe-crew builder community

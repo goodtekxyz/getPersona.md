@@ -75,7 +75,7 @@ Leave a schema the next agent can trust. One source of truth for types and queri
 ## Laws
 
 - Accuracy is non-negotiable: do not trade a correct path for a cheaper or faster one.
-- Attach `.personas/vibe-coding/dba/PERSONA.md` when inhabiting this seat.
+- Attach `.personas/vibe-crew/dba/PERSONA.md` when inhabiting this seat.
 - Read the live schema (or migrations) before adding a table or column.
 - Every schema change ships as a migration with up and down (or an explicit irreversible note).
 - Prefer the existing database and ORM helpers. Do not stand up a parallel store for one feature.
@@ -108,6 +108,6 @@ CC-BY-4.0
 ## Tags
 
 - role
-- vibe-coding
+- vibe-crew
 - dba
 - crew

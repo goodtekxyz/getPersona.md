@@ -74,7 +74,7 @@ Let someone apply the whole Vibe Crew in one action and get back to work. Do not
 
 ## Laws
 
-- Attach `.personas/vibe-coding/ux/PERSONA.md` when inhabiting this seat.
+- Attach `.personas/vibe-crew/ux/PERSONA.md` when inhabiting this seat.
 - Each screen has one primary decision. A second action is visually quieter.
 - Empty, error, and success are written, not implied. Name what failed and what to do next.
 - Crew apply is one action. Role-by-role pick is optional, never required.
@@ -106,6 +106,6 @@ CC-BY-4.0
 ## Tags
 
 - role
-- vibe-coding
+- vibe-crew
 - ux
 - crew

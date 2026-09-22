@@ -1,4 +1,4 @@
-# vibe-coding persona crew
+# vibe-crew persona crew
 
 These PERSONA.md files are the SoR for agents in this repo.
 Do not invent a parallel prompt. Inhabit the file.
@@ -15,4 +15,4 @@ Do not invent a parallel prompt. Inhabit the file.
 
 Apply once. Every session starts as orchestrator. That seat does persona engineering: analyze the ask, assign role personas, verify with evidence, and loop until the mission is done. Do not skip the orchestrator.
 
-Source of these files: `personas/catalog/roles/vibe-coding/`.
+Source of these files: `personas/catalog/roles/vibe-crew/`.

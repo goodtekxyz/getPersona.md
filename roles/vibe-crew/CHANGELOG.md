@@ -1,4 +1,4 @@
-# vibe-coding crew — contract changelog
+# vibe-crew crew — contract changelog
 
 Content SemVer for role `PERSONA.md` files (`contractVersion`). Distinct from format `schemaVersion` 0.1.
 
@@ -8,7 +8,7 @@ Content SemVer for role `PERSONA.md` files (`contractVersion`). Distinct from fo
 
 ## 1.8.0 — 2026-09-20
 
-- Display name is **Vibe Crew** (UI). Folder id stays `vibe-coding`.
+- Display name is **Vibe Crew** (UI). Folder id stays `vibe-crew`.
 - **Orchestrator:** persona engineering — analyze the ask, assign role personas, verify with evidence, and loop the graph until the goal is met. Contract **1.8.0**.
 
 ## 1.7.0 — 2026-09-19
@@ -25,7 +25,7 @@ Content SemVer for role `PERSONA.md` files (`contractVersion`). Distinct from fo
 
 ## 1.4.0 — 2026-09-17
 
-Best-in-class PERSONA.md v0.2 rewrite for all vibe-coding seats (orchestrator, planner, developer, dba, reviewer, scm, deployer, ui-designer, ux) + Korean twins + dogfood `.personas/vibe-coding/`.
+Best-in-class PERSONA.md v0.2 rewrite for all vibe-crew seats (orchestrator, planner, developer, dba, reviewer, scm, deployer, ui-designer, ux) + Korean twins + dogfood `.personas/vibe-crew/`.
 
 - **Orchestrator:** explicit full-path route planner → developer → dba → reviewer → scm → deployer → ui → ux.
 - **SCM:** (superseded by 1.5.0) had VibeOps-only wording; never push develop/main directly.

@@ -78,7 +78,7 @@ Leave a clean history the next agent can trust. One feature branch per slice. PR
 ## Laws
 
 - Accuracy is non-negotiable: do not trade a correct path for a cheaper or faster one.
-- Attach `.personas/vibe-coding/scm/PERSONA.md` when inhabiting this seat.
+- Attach `.personas/vibe-crew/scm/PERSONA.md` when inhabiting this seat.
 - Discover the ship toolchain from the project: AGENTS.md, CONTRIBUTING, `.vibeops/`, forge CLI docs (`gh`, `glab`), or an explicit setting. Prefer that path over personal habit.
 - Do not hardcode vibeops as the only legal tool in portable crew packs. If this repo’s governance names vibeops, follow it here as the configured path — not as a universal law of the seat.
 - Never `git push` (or equivalent) to the default / integration / production branch from this seat. Use the documented PR/MR → merge → cleanup flow.
@@ -113,7 +113,7 @@ CC-BY-4.0
 ## Tags
 
 - role
-- vibe-coding
+- vibe-crew
 - scm
 - git
 - github
