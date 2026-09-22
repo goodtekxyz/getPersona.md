@@ -2,6 +2,13 @@
 
 Content SemVer for role `PERSONA.md` files (`contractVersion`).
 
+## 1.5.0 — 2026-09-22
+
+- **`voice-maker-brief-ko` 1.0.0:** Korean **default** = minimal product/maker intro edit brief (fact skeleton; not writer cosplay).
+- **Defaults:** ko → `voice-maker-brief-ko`, en → `voice-pg-essay`.
+- **Optional overrides:** `voice-tech-blogger-ko`, `voice-kim-honbi-essay`.
+- **Lead:** Korean `product-intro` → author(+voice) then human edit; skip review/polish unless user asks for full essay pass.
+
 ## 1.4.0 — 2026-09-22
 
 - **`voice-tech-blogger-ko` 1.0.0:** Korean default = polite, concise, fact-first IT tech blogger (30s male archetype).
