@@ -1,6 +1,6 @@
-# Blog Author · Apply proof (D-086)
+# Blog Author · Apply proof (D-086 / D-086 live)
 
-Viral unit: **same prompt, contract on/off — shown side-by-side on the landing**.
+Viral unit: **same prompt, contract on/off — live on the landing `#proof`**.
 
 ## Prompt
 
@@ -8,20 +8,17 @@ Viral unit: **same prompt, contract on/off — shown side-by-side on the landing
 
 ## Without PERSONA.md
 
-Generic assistant praise (innovation / UX / productivity / get started).
+`POST /v1/personas/catalog/plain/chat/stream` — generic assistant, no contract.
 
 ## With Apply · `jobs-keynote`
 
-> 한 가지입니다.
-> 적으면, 남습니다.
-> 그게 앱입니다.
+`POST /v1/personas/catalog/jobs-keynote/chat/stream` — inhabit Jobs · Keynote.
 
 ## Surfaces
 
-- Landing `#proof` — always side-by-side chat bubbles (not a live LLM call)
-- Primary CTA **copies** the real Apply prompt (`personaApplyPromptFromSlug('jobs-keynote')`)
-- Secondary CTA → `/personas/catalog/jobs-keynote`
-- Hero “차이 보기” scrolls to `#proof` on the same page
+- Landing `#proof` — button **이 화면에서 비교하기** streams both columns in parallel
+- No paste-elsewhere Apply CTA on the proof block
+- Secondary: `#talk` / catalog persona page
 - Live talk (`#talk`) remains D-022
 
 ## Hook
