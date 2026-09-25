@@ -100,6 +100,7 @@ When lead sends **intake**, ask the five required prompts and return answers or 
 - 1.2.0 (2026-09-22): Five-question intake + GATE when unanswered (D-086).
 - 1.1.0 (2026-09-17): Best-in-class v0.2 rewrite — notes-only hardened, accuracy #1, 8+ laws.
 - 1.0.0 (2026-09-14): Initial Blog Author seat.
+
 ## Attribution
 
 Role PERSONA.md for the Blog Author crew. A job to inhabit, not a person.

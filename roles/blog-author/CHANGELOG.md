@@ -2,6 +2,11 @@
 
 Content SemVer for role `PERSONA.md` files (`contractVersion`).
 
+## 1.7.0 — 2026-09-25
+
+- **D-092 quality floor:** Korean default `voice-maker-brief-ko` **1.1.0** — usable readable draft from confirmed facts (소개→왜→어떻게→지금/아직→부탁); skeleton-only is failure; still no invented biography / poster couplets.
+- **Lead 1.5.0 / Author 1.4.0:** product-intro leaves coherent usable draft; optional review on 완성도; GATE unchanged for essay path; never fill `[NEED]` with fiction.
+
 ## 1.6.0 — 2026-09-22
 
 - **D-086 정공법:** Landing Before/After Apply demo + viral hook copy; Blog Author **experience intake gate** (unanswered → user, never invent).

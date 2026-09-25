@@ -9,7 +9,6 @@ AI 에이전트에 페르소나를 부여하세요.
 
 > **말투를 설명하지 말고, 에이전트가 읽을 계약을 주세요.**
 
-
 **제품:** [getpersona.md](https://getpersona.md)
 
 ## 이게 뭔가요
@@ -21,17 +20,16 @@ AI 에이전트에 페르소나를 부여하세요.
 
 [getpersona.md](https://getpersona.md)에서 페르소나를 고르고, **적용하기**를 복사해 ChatGPT·Claude·Cursor에 붙여 넣으면 됩니다. 적용에는 계정이 필요 없습니다.
 
-
 ## 30초 증명 (Before / After Apply)
 
 같은 질문:
 
 > 우리 제품을 한 문장으로 소개해 줘. 뭐가 중요한지 말해 줘.
 
-| | 답 |
-|--|--|
-| **계약 없음** | 평범한 도우미 칭찬 (“혁신적인 솔루션… 생산성…”) |
-| **Apply `jobs-keynote`** | *It just works. We show the thing, then we name it. One idea. No filler.* |
+|                          | 답                                                                        |
+| ------------------------ | ------------------------------------------------------------------------- |
+| **계약 없음**            | 평범한 도우미 칭찬 (“혁신적인 솔루션… 생산성…”)                           |
+| **Apply `jobs-keynote`** | _It just works. We show the thing, then we name it. One idea. No filler._ |
 
 모델이 바뀐 게 아닙니다. 에이전트가 읽는 한 장이 바뀐 겁니다. [getpersona.md](https://getpersona.md/#proof)에서 확인해 보세요.
 

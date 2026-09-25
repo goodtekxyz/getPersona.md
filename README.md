@@ -9,7 +9,6 @@ Give your AI agent a persona.
 
 > **Don't describe the tone. Give the agent a contract it can follow.**
 
-
 **Product:** [getpersona.md/en](https://getpersona.md/en)
 
 ## What this is
@@ -21,17 +20,16 @@ Give your AI agent a persona.
 
 On [getpersona.md/en](https://getpersona.md/en), pick a persona, copy **Apply**, and paste it into ChatGPT, Claude, or Cursor. No account needed to apply.
 
-
 ## 30-second proof (Before / After Apply)
 
 Same prompt:
 
 > Introduce our product in one sentence. Tell me what matters.
 
-| | Reply |
-|--|--|
-| **No contract** | Generic assistant praise (“innovative solution… boost productivity…”) |
-| **Apply `jobs-keynote`** | *It just works. We show the thing, then we name it. One idea. No filler.* |
+|                          | Reply                                                                     |
+| ------------------------ | ------------------------------------------------------------------------- |
+| **No contract**          | Generic assistant praise (“innovative solution… boost productivity…”)     |
+| **Apply `jobs-keynote`** | _It just works. We show the thing, then we name it. One idea. No filler._ |
 
 The model did not change — the one page the agent reads did. Try it on [getpersona.md](https://getpersona.md/#proof).
 

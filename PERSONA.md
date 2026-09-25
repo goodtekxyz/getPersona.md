@@ -152,6 +152,20 @@ Line form: `- medical/hard: No diagnosis; suggest professional care`
 - Role contracts are `native: en`, `speaks: ko, en`. Korean role names stay in UI messages, not in the contract.
 - A public voice whose body is Korean keeps that body. `yoo-variety` and `baek-table` speak Korean only. `son-pitch` and `bong-cinema` speak Korean and English; the file stays Korean.
 
+### 5.4 Style voices (crew extension — D-085)
+
+Crews may ship **style voice** seats for prose cadence without a new `kind` or new required headings.
+
+| Rule                 | Detail                                                                                                                                                                                                                      |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kind / path          | Still `kind: role` at `roles/<domain>/voice-<id>/PERSONA.md` (depth 3 — same loader).                                                                                                                                       |
+| What goes where      | **Speech.habits** = breath/register habits · **Samples** = few-shot lines · **Refusals** = banned rhythms/phrases · **Laws** = when to attach / language gate · **Policy.likeness** + **Provenance** = not the real writer. |
+| Do not add           | Free-text “말투” adjectives, MBTI, or a custom `## Style` heading (round-trip would drop unknown sections).                                                                                                                 |
+| Crew wiring          | Optional `CrewDefinition.voices: { role, native }[]`. Lead picks by post language; process seat (e.g. author) **dual-attaches** process + voice.                                                                            |
+| Blog Author defaults | `ko` → `voice-maker-brief-ko` · `en` → `voice-pg-essay`. Optional: `voice-tech-blogger-ko`, `voice-kim-honbi-essay`.                                                                                                        |
+
+Process seats stay job routers (`lead`, `author`, …). Style voices stay cadence-only and must not invent biography.
+
 ---
 
 ## 6. Canonical `PERSONA.md` (v0.2)
