@@ -6,6 +6,10 @@ Content SemVer for role `PERSONA.md` files (`contractVersion`). Distinct from fo
 
 - One `PERSONA.md`. `native: en`. `speaks: ko, en`. Catalog no longer reads `PERSONA.ko.md`. The 1.2.0 line below is the old rule, kept as history.
 
+## 1.9.0 — 2026-09-28
+
+- **Orchestrator:** soften first-words from refusal-first to **identity + handoff**. Lead with Role, path, seat identity, and worker handoff. Hard boundary (no implement/review/deploy) stays in Who/Refusals/Laws. Contract **1.9.0**.
+
 ## 1.8.0 — 2026-09-20
 
 - Display name is **Vibe Crew** (UI). Folder id stays `vibe-crew`.
